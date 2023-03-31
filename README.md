@@ -71,3 +71,19 @@ Wireframes have been created using [Balsamic](https://balsamiq.com "Balsamic"). 
 ### Logo
 
 The logo will is styled using the [Bangers](https://fonts.google.com/specimen/Bangers "Bangers") font and acts to immediately engage the user.
+
+### Welcome Window
+
+The welcome window will give a brief welcome message to the user and instructions on how to progress through the quiz. There is also a button to start the quiz and one to access the leaderboard.
+
+### Game Window
+
+The game window will show the question counter and their current score at the top. Underneath will be the current question, followed by the 4 possible answers. Once the answer has been selected, the next question will be loaded, the question counter and current score (if necessary) will be updated. There will be a restart button underneath the answers to allow the user to start the quiz again, if they so wish.
+
+### Result Window
+
+The result window will show a congratulation, or commiseration message depending on the score the user achieved. The message will include the users score. There will be an input field for the user to add their username, along with a button to submit their score and if it is good enough, their score will be added to the leaderboard. A button to take the user back to the welcome window will be placed at the bottom. 
+
+### Leaderboard Window
+
+The leaderboard window can be accessed via a button on the welcome window. This will show the best 5 scores for the quiz. It will feature the username, score and position on the leaderboard for the user.
