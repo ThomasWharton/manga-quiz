@@ -51,3 +51,23 @@ Two colours which were preselected are the colours found in the Japanese flag. T
 The structure of the site and quiz will be one of simplicity as to not deter the user from engaging with the content. On loading, the intitial content will be of a window containing a welcome message and instructions on how to progress through the quiz. The window will also contain a button to begin the quiz and one to access the leaderboard. 
 
 Once the start button is clicked, the welcome window will no longer be displayed and will be replaced by the quiz window. Once the quiz is complete, a result window will replace the quiz window with a form to submit the score to the leaderboard. The result window will include a navigation button to return back to the welcome page.
+
+The leaderboard can be accessed via the welcome window and will include a close button to hide leaderboard and replace with welcome window again.
+
+## Wireframes
+
+Wireframes have been created using [Balsamic](https://balsamiq.com "Balsamic"). These wireframes give a basic view of how the quiz will be laid out and structured. 
+
+### Welcome Window
+
+### Game Window
+
+### Result Window
+
+### Leaderboard Window
+
+## Features
+
+### Logo
+
+The logo will is styled using the [Bangers](https://fonts.google.com/specimen/Bangers "Bangers") font and acts to immediately engage the user.
