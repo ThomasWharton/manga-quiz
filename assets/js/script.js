@@ -32,5 +32,10 @@ const fetchQuestionList = () => {
     fetch(APIURL)
         .then((res) => res.json())
         .then((fetchedQuestions) => formatQuestion(fetchedQuestions.results))
-            .then(formattedQuestions => console.log(formattedQuestions))
+            .then(getFormattedQuestions => {
+                const formattedQuestions = formatQuestion.results;
+                console.log(formattedQuestions);
+            })
 }
+
+fetchQuestionList();
