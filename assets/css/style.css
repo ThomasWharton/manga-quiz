@@ -1,1 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Bangers&family=BioRhyme&display=swap');
+
+/* Global Styling */
+
+:root {
+    --red: #BC002D;
+    --white: #fff;
+    --gray: #817F82;
+    --orange: #FF7F11;
+    --logo-font: 'Bangers', cursive;
+    --main-font: 'BioRhyme', serif;
+}

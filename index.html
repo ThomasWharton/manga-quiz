@@ -10,13 +10,16 @@
     <title>Manga Quiz</title>
 </head>
 <body>
+  <!-- Main container for positioning elements -->
+  <div id="main-container">
+
     <!-- Logo -->
     <div id="logo">
         <h1>Manga Quiz!</h1>
     </div>
     
     <!-- Container for window -->
-    <div id="main-container">
+    <div id="window-container">
 
         <!-- Welcome Window -->
         <div id="welcome">
@@ -37,11 +40,15 @@
                 Upon completing the quiz, you will be shown your results and an option to submit your scores with a username of your choosing.<br>
                 You can restart the quiz at anytime by clicking the restart button on the game window.
             </p>
+            
+            <button type="button" class="btn" id="start-quiz">Start Quiz!</button>
+            <button type="button" class="btn" id="leaderboard-btn">Leaderboard</button>
         </div>
         <div id="quiz"></div>
         <div id="result"></div>
         <div id="leaderboard"></div>
     </div>
+  </div>
     
 </body>
 </html>
