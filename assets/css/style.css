@@ -3,10 +3,80 @@
 /* Global Styling */
 
 :root {
-    --red: #BC002D;
+    --crimson: #BC002D;
     --white: #fff;
     --gray: #817F82;
     --orange: #FF7F11;
     --logo-font: 'Bangers', cursive;
     --main-font: 'BioRhyme', serif;
 }
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+/* Main styling */
+
+body {
+    font-size: 1.4rem;
+    font-family: var(--main-font);
+    background-image: url(../images/background.jpg);
+    background-position: center;
+}
+
+h1 {
+    font-family: var(--logo-font);
+    color: var(--crimson);
+    font-size: 5.4rem;
+    letter-spacing: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    letter-spacing: 0.2rem;
+}
+
+/* Full page positioning */
+
+#main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    margin: 0 auto;
+}
+
+/* Window Styling */
+
+#window-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    text-align: center;
+    background-color: var(--crimson);
+    width: 80%;
+    border-radius: 2rem;
+    color: var(--white);
+    padding: 1rem;
+    max-width: 60rem;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Button Styling */
+
