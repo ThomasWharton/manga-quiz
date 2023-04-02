@@ -40,18 +40,27 @@ h1 {
 }
 
 h2 {
-    text-transform: uppercase;
     font-size: 1.8rem;
     letter-spacing: 0.2rem;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-center {
+    justify-content: center;
+    align-items: center;
 }
 
 /* Full page positioning */
 
 #main-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
     width: 100vw;
     margin: 0 auto;
@@ -60,10 +69,6 @@ h2 {
 /* Window Styling */
 
 #window-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     margin: 0 auto;
     text-align: center;
     background-color: var(--crimson);
@@ -80,3 +85,25 @@ h2 {
 
 /* Button Styling */
 
+.btn {
+    background-color: var(--white);
+    color: var(--crimson);
+    font-family: var(--main-font);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    margin: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+}
+
+.btn:hover {
+    cursor: pointer;
+    box-shadow: 0.5rem 0.5rem 0.5rem var(--orange);
+    transform: translateY(-0.2rem);
+    transition: transform 150ms;
+}
+
+.btn:active {
+    box-shadow: 0.3rem 0.3rem 0.3rem var(--gray);
+    transform: translateY(0.3rem);
+}

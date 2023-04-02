@@ -11,7 +11,7 @@
 </head>
 <body>
   <!-- Main container for positioning elements -->
-  <div id="main-container">
+  <div id="main-container" class="flex-center flex-column">
 
     <!-- Logo -->
     <div id="logo">
@@ -19,12 +19,12 @@
     </div>
     
     <!-- Container for window -->
-    <div id="window-container">
+    <div id="window-container" class="flex-center flex-column">
 
         <!-- Welcome Window -->
         <div id="welcome">
             <!-- Welcome message -->
-            <h2>Welcome!</h2>
+            <h2 class="uppercase">Welcome!</h2>
             <p>
                 Always thought of yourself as a super manga and anime fan?<br>
                 Well now you can put that to the test with this amazing manga quiz!<br>
@@ -32,7 +32,7 @@
             </p>
 
             <!-- Instructions -->
-            <h2>Instructions</h2>
+            <h2 class="uppercase">Instructions</h2>
             <p>
                 To begin the quiz, click on the start button below!<br>
                 You will be presented with a question and 4 possible answers.<br>
@@ -40,9 +40,10 @@
                 Upon completing the quiz, you will be shown your results and an option to submit your scores with a username of your choosing.<br>
                 You can restart the quiz at anytime by clicking the restart button on the game window.
             </p>
-            
-            <button type="button" class="btn" id="start-quiz">Start Quiz!</button>
-            <button type="button" class="btn" id="leaderboard-btn">Leaderboard</button>
+            <div class="flex-column flex-center">
+                <button type="submit" class="btn uppercase" id="start-quiz">Start!</button>
+                <button type="submit" class="btn uppercase" id="leaderboard-btn">Leaderboard</button>
+            </div>
         </div>
         <div id="quiz"></div>
         <div id="result"></div>
