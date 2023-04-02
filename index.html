@@ -19,10 +19,10 @@
     </div>
     
     <!-- Container for window -->
-    <div id="window-container" class="flex-center flex-column">
+    <div id="window-container" class="window flex-center flex-column">
 
         <!-- Welcome Window -->
-        <div id="welcome">
+        <div id="welcome" class="hidden">
             <!-- Welcome message -->
             <h2 class="uppercase">Welcome!</h2>
             <p>
@@ -45,7 +45,32 @@
                 <button type="submit" class="btn uppercase" id="leaderboard-btn">Leaderboard</button>
             </div>
         </div>
-        <div id="quiz"></div>
+
+        <!-- Quiz Window -->
+        <div id="quiz" class="window flex-column flex-center">
+
+            <h2 id="question">This is a question?</h2>
+
+            <div class="option-container">
+                <p class="option-prefix">A</p>
+                <p class="option-text">Option 1</p>
+            </div>
+
+            <div class="option-container">
+                <p class="option-prefix">B</p>
+                <p class="option-text">Option 2</p>
+            </div>
+
+            <div class="option-container">
+                <p class="option-prefix">C</p>
+                <p class="option-text">Option 3</p>
+            </div>
+
+            <div class="option-container">
+                <p class="option-prefix">D</p>
+                <p class="option-text">Option 4</p>
+            </div>
+        </div>
         <div id="result"></div>
         <div id="leaderboard"></div>
     </div>

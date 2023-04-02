@@ -68,7 +68,7 @@ h2 {
 
 /* Window Styling */
 
-#window-container {
+.window {
     margin: 0 auto;
     text-align: center;
     background-color: var(--crimson);
@@ -106,4 +106,37 @@ h2 {
 .btn:active {
     box-shadow: 0.3rem 0.3rem 0.3rem var(--gray);
     transform: translateY(0.3rem);
+}
+
+/* Quiz page styling */
+
+#question {
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+}
+
+.option-container {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0.5rem;
+    width: 80%;
+    background-color: var(--white);
+}
+
+.option-container:hover {
+    cursor: pointer;
+    box-shadow: 0.2rem 0.2rem 0.2rem var(--orange);
+    transform: translateY(-0.2rem);
+    transition: transform 150ms;
+}
+
+.option-prefix {
+    padding: 1rem;
+    background-color: var(--orange);
+    color: var(--white);
+}
+
+.option-text {
+    padding: 1rem;
+    color: var(--crimson);
 }
