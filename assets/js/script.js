@@ -37,6 +37,12 @@ const presentQuestions = (questionList) => {
     options[3].innerText = questionList[0].answers[3];
 }
 
+/**
+ * Sets questionCounter and score to 0,
+ * adds formattedQuestions to availableQuestion array,
+ * logs available questions to console and
+ * gets next question.
+ */
 startQuiz = () => {
     questionCounter = 0;
     score = 0;
