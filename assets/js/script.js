@@ -28,6 +28,10 @@ const formatQuestion = (questionList) => {
     })
 }
 
+/**
+ * Takes question from questionList,
+ * edits html to display question and answers.
+ */
 const presentQuestions = (questionList) => {
     console.log(questionList);
     question.innerText = questionList[0].question;
@@ -48,7 +52,7 @@ startQuiz = () => {
     score = 0;
     availableQuestions = [...formattedQuestions];
     console.log(availableQuestions);
-    nextQuestion();
+    presentQuestion();
 }
 
 /**
