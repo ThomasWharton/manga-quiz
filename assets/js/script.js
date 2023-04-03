@@ -37,6 +37,14 @@ const presentQuestions = (questionList) => {
     options[3].innerText = questionList[0].answers[3];
 }
 
+startQuiz = () => {
+    questionCounter = 0;
+    score = 0;
+    availableQuestions = [...formattedQuestions];
+    console.log(availableQuestions);
+    nextQuestion();
+}
+
 /**
  * Waits for questions to fetched from API
  * then resolves json,
