@@ -61,6 +61,11 @@ startQuiz = () => {
     quiz.classList.remove('hidden');
 }
 
+restartQuiz = () => {
+    quiz.classList.add('hidden');
+    welcome.classList.remove('hidden');
+}
+
 /**
  * Waits for questions to fetched from API
  * then resolves json,
@@ -74,6 +79,7 @@ startQuiz = () => {
     const formattedQuestions = await formatQuestion(fetchedQuestions.results);
     const presentedQuestions = await presentQuestions(formattedQuestions);
     quizStart.addEventListener('click', startQuiz);
+    restart.addEventListener('click', restartQuiz);
 })();
 
 
