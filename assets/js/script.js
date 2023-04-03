@@ -3,6 +3,11 @@ const APIURL = 'https://opentdb.com/api.php?amount=10&category=31&type=multiple'
 const question = document.getElementById('question');
 const options = Array.from(document.getElementsByClassName('option-text'));
 
+let currentQuestion = {};
+let acceptingAnswers = false;
+let score = 0;
+let questionCounter = 0;
+let availableQuestions = [];
 
 // Constants
 const correctAnswerPoint = 1;
@@ -23,19 +28,25 @@ const formatQuestion = (questionList) => {
     })
 }
 
-/**
- * Fetch questions from API,
- * format questions using formatQuestion function,
- * returns formatted questions
- */
-const fetchQuestionList = () => {
-    fetch(APIURL)
-        .then((res) => res.json())
-        .then((fetchedQuestions) => formatQuestion(fetchedQuestions.results))
-            .then(getFormattedQuestions => {
-                const formattedQuestions = formatQuestion.results;
-                console.log(formattedQuestions);
-            })
+const presentQuestions = (questionList) => {
+    console.log(questionList);
+    question.innerText = questionList[0].question;
+    options[0].innerText = questionList[0].answers[0];
+    options[1].innerText = questionList[0].answers[1];
+    options[2].innerText = questionList[0].answers[2];
+    options[3].innerText = questionList[0].answers[3];
 }
 
-fetchQuestionList();
+/**
+ * Waits for questions to fetched from API
+ * then resolves json,
+ * formats questions using formatQuestion function,
+ * presents question in html.
+ * 
+ */
+(async () => {
+    const res = await fetch(APIURL);
+    const fetchedQuestions = await res.json();
+    const formattedQuestions = await formatQuestion(fetchedQuestions.results);
+    const presentedQuestions = await presentQuestions(formattedQuestions);
+})();
