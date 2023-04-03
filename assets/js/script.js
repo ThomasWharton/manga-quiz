@@ -46,8 +46,6 @@ const presentQuestions = (questionList) => {
     options[1].innerText = questionList[0].answers[1];
     options[2].innerText = questionList[0].answers[2];
     options[3].innerText = questionList[0].answers[3];
-
-    presentedQuestions.splice(questionList, 1);
 }
 
 /**
