@@ -14,7 +14,6 @@ let currentQuestion = {};
 let acceptingAnswers = false;
 let score = 0;
 let questionCounter = 0;
-let availableQuestions = [];
 
 // Constants
 const correctAnswerPoint = 1;
@@ -41,11 +40,14 @@ const formatQuestion = (questionList) => {
  */
 const presentQuestions = (questionList) => {
     console.log(questionList);
+    questionCounter++;
     question.innerText = questionList[0].question;
     options[0].innerText = questionList[0].answers[0];
     options[1].innerText = questionList[0].answers[1];
     options[2].innerText = questionList[0].answers[2];
     options[3].innerText = questionList[0].answers[3];
+
+    presentedQuestions.splice(questionList, 1);
 }
 
 /**
@@ -54,14 +56,19 @@ const presentQuestions = (questionList) => {
  * logs available questions to console and
  * gets next question.
  */
-startQuiz = () => {
+const startQuiz = () => {
     questionCounter = 0;
     score = 0;
     welcome.classList.add('hidden');
     quiz.classList.remove('hidden');
 }
 
-restartQuiz = () => {
+/**
+ * Adds hidden class to quiz window
+ * then removes hidden class from welcome window
+ * thus returning to welcome window.
+ */
+const restartQuiz = () => {
     quiz.classList.add('hidden');
     welcome.classList.remove('hidden');
 }
@@ -80,6 +87,7 @@ restartQuiz = () => {
     const presentedQuestions = await presentQuestions(formattedQuestions);
     quizStart.addEventListener('click', startQuiz);
     restart.addEventListener('click', restartQuiz);
+
 })();
 
 
