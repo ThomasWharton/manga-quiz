@@ -2,6 +2,9 @@
 const APIURL = 'https://opentdb.com/api.php?amount=10&category=31&type=multiple';
 const question = document.getElementById('question');
 const options = Array.from(document.getElementsByClassName('option-text'));
+const quizStart = document.getElementById('start-quiz');
+const leaderboard = document.getElementById('leaderboard-btn');
+const restart = document.getElementById('restart');
 
 let currentQuestion = {};
 let acceptingAnswers = false;
