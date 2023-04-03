@@ -57,10 +57,8 @@ const presentQuestions = (questionList) => {
 startQuiz = () => {
     questionCounter = 0;
     score = 0;
-    availableQuestions = [...formattedQuestions];
-    console.log(availableQuestions);
-    presentQuestion();
-
+    welcome.classList.add('hidden');
+    quiz.classList.remove('hidden');
 }
 
 /**
@@ -75,4 +73,7 @@ startQuiz = () => {
     const fetchedQuestions = await res.json();
     const formattedQuestions = await formatQuestion(fetchedQuestions.results);
     const presentedQuestions = await presentQuestions(formattedQuestions);
+    quizStart.addEventListener('click', startQuiz);
 })();
+
+
