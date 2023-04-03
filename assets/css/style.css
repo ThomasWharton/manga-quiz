@@ -142,3 +142,9 @@ h2 {
     padding: 1rem;
     color: var(--crimson);
 }
+
+/* Results window styling */
+
+#username {
+    margin-top: 1rem;
+}
