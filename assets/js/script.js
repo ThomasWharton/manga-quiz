@@ -1,4 +1,3 @@
-// Create constant for api url
 const APIURL = 'https://opentdb.com/api.php?amount=10&category=31&type=multiple';
 const question = document.getElementById('question');
 const options = Array.from(document.getElementsByClassName('option-text'));
@@ -25,7 +24,7 @@ const maxQuestions = 10;
  * returns formatted question
  */
 const formatQuestion = (questionList) => {
-    return questionList.map(q => {
+    return questionList?.map(q => {
         return {
             question: q.question,
             correctAnswer: q.correct_answer,
@@ -41,12 +40,11 @@ const formatQuestion = (questionList) => {
 const presentQuestions = (questionList) => {
     console.log(questionList);
     questionCounter++;
-    question.innerText = questionList[0].question;
-    options[0].innerText = questionList[0].answers[0];
-    options[1].innerText = questionList[0].answers[1];
-    options[2].innerText = questionList[0].answers[2];
-    options[3].innerText = questionList[0].answers[3];
-}
+    question.innerHTML = questionList.question;
+    options.forEach((option, index) => {
+        option.innerHTML = questionList.answers[index];
+    });
+};
 
 /**
  * Sets questionCounter and score to 0,
@@ -78,14 +76,15 @@ const restartQuiz = () => {
  * presents question in html.
  * 
  */
-(async () => {
+const initialise = async() => {
     const res = await fetch(APIURL);
     const fetchedQuestions = await res.json();
     const formattedQuestions = await formatQuestion(fetchedQuestions.results);
-    const presentedQuestions = await presentQuestions(formattedQuestions);
+    presentQuestions(formattedQuestions[0]);
+};
+
+window.addEventListener("DOMContentLoaded", (event) => {
     quizStart.addEventListener('click', startQuiz);
     restart.addEventListener('click', restartQuiz);
-
-})();
-
-
+    initialise();
+});
