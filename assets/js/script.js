@@ -30,9 +30,13 @@ const formatQuestion = (questionList) => {
         return {
             question: q.question,
             correctAnswer: q.correct_answer,
-            answers: [...q.incorrect_answers, q.correct_answer]
+            answers: shuffleAnswers([...q.incorrect_answers, q.correct_answer])
         }
     })
+}
+
+const shuffleAnswers = (answersArray) => {
+    return answersArray.sort(() => Math.random() - 0.5);
 }
 
 /**
