@@ -13,6 +13,7 @@ let currentQuestion = {};
 let acceptingAnswers = false;
 let score = 0;
 let questionCounter = 0;
+let availableQuestions = [];
 
 // Constants
 const correctAnswerPoint = 1;
@@ -37,14 +38,23 @@ const formatQuestion = (questionList) => {
  * Takes question from questionList,
  * edits html to display question and answers.
  */
-const presentQuestions = (questionList) => {
-    console.log(questionList);
+// const presentQuestions = (questionList) => {
+//     console.log(questionList);
+//     questionCounter++;
+//     question.innerHTML = questionList.question;
+//     options.forEach((option, index) => {
+//         option.innerHTML = questionList.answers[index];    
+//     });
+//     availableQuestions.splice[0];
+// };
+
+const presentQuestions = (availableQuestions) => {
     questionCounter++;
-    question.innerHTML = questionList.question;
+    question.innerHTML = availableQuestions.question;
     options.forEach((option, index) => {
-        option.innerHTML = questionList.answers[index];    
+        option.innerHTML = availableQuestions.answers[index];    
     });
-    questionList.splice[0];
+    availableQuestions.splice(question, 0);
 };
 
 
@@ -94,18 +104,14 @@ const initialise = async() => {
     const res = await fetch(APIURL);
     const fetchedQuestions = await res.json();
     const formattedQuestions = await formatQuestion(fetchedQuestions.results);
-    presentQuestions(formattedQuestions[0]);
+    availableQuestions = [...formattedQuestions];
+    console.log(availableQuestions);
+    presentQuestions(availableQuestions[0]);
 };
 
 window.addEventListener("DOMContentLoaded", (event) => {
     quizStart.addEventListener('click', startQuiz);
     restart.addEventListener('click', restartQuiz);
     initialise();
-    options.forEach(option => {
-        option.addEventListener('click', e => {
-            const selectedOption = e.target;
-            const selectedAnswer = selectedOption.dataset['number'];
-            checkAnswer(selectedAnswer);
-        });
-    });
+    
 });
