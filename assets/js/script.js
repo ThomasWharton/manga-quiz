@@ -50,11 +50,15 @@ const formatQuestion = (questionList) => {
 
 const presentQuestions = (availableQuestions) => {
     questionCounter++;
-    question.innerHTML = availableQuestions.question;
+    const questionIndex = Math.floor(Math.random() * availableQuestions.length);
+    console.log(questionIndex);
+    presentedQuestion = availableQuestions[questionIndex];
+    question.innerHTML = presentedQuestion.question;
     options.forEach((option, index) => {
-        option.innerHTML = availableQuestions.answers[index];    
+        option.innerHTML = presentedQuestion.answers[index];    
     });
-    availableQuestions.splice(question, 0);
+    availableQuestions.splice(question, 1);
+
 };
 
 
@@ -106,12 +110,11 @@ const initialise = async() => {
     const formattedQuestions = await formatQuestion(fetchedQuestions.results);
     availableQuestions = [...formattedQuestions];
     console.log(availableQuestions);
-    presentQuestions(availableQuestions[0]);
+    presentQuestions(availableQuestions);
 };
 
 window.addEventListener("DOMContentLoaded", (event) => {
     quizStart.addEventListener('click', startQuiz);
     restart.addEventListener('click', restartQuiz);
     initialise();
-    
 });
