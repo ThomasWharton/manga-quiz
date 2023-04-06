@@ -42,9 +42,13 @@ const presentQuestions = (questionList) => {
     questionCounter++;
     question.innerHTML = questionList.question;
     options.forEach((option, index) => {
-        option.innerHTML = questionList.answers[index];
+        option.innerHTML = questionList.answers[index];    
     });
+    questionList.splice[0];
 };
+
+
+
 
 /**
  * Sets questionCounter and score to 0,
@@ -68,6 +72,16 @@ const restartQuiz = () => {
     quiz.classList.add('hidden');
     welcome.classList.remove('hidden');
 }
+ 
+
+const checkAnswer = (selectedAnswer) => {
+    if (selectedAnswer === questionList.correctAnswer) {
+        score++;
+        presentQuestions();
+        } else {
+            presentQuestions();
+        }
+}
 
 /**
  * Waits for questions to fetched from API
@@ -87,4 +101,11 @@ window.addEventListener("DOMContentLoaded", (event) => {
     quizStart.addEventListener('click', startQuiz);
     restart.addEventListener('click', restartQuiz);
     initialise();
+    options.forEach(option => {
+        option.addEventListener('click', e => {
+            const selectedOption = e.target;
+            const selectedAnswer = selectedOption.dataset['number'];
+            checkAnswer(selectedAnswer);
+        });
+    });
 });
