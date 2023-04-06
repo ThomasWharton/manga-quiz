@@ -41,8 +41,18 @@
                 You can restart the quiz at anytime by clicking the restart button on the game window.
             </p>
             <div class="flex-column flex-center">
-                <button type="submit" class="btn uppercase" id="start-quiz">Start!</button>
-                <button type="submit" class="btn uppercase" id="leaderboard-btn">Leaderboard</button>
+                <button 
+                    type="button" 
+                    class="btn uppercase" 
+                    id="start-quiz">
+                    Start!
+                </button>
+                <button 
+                    type="button" 
+                    class="btn uppercase" 
+                    id="leaderboard-btn">
+                    Leaderboard
+                </button>
             </div>
         </div>
 
@@ -72,7 +82,7 @@
             </div>
 
             <button 
-                type="submit" 
+                type="button" 
                 class="btn uppercase" 
                 id="restart">
                 Restart
@@ -90,20 +100,20 @@
                 placeholder="username"
             />
             <button 
-                type="submit" 
+                type="button" 
                 class="btn uppercase" 
                 id="submit-score">
                 Submit
             </button>
             <button 
-                type="submit" 
+                type="button" 
                 class="btn uppercase" 
                 id="restart">
                 Restart
             </button>
             
         </div>
-        <div id="leaderboard"></div>
+        <div id="leaderboard" class="window flex-column flex-center hidden"></div>
     </div>
   </div>
 

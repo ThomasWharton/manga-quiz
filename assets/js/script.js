@@ -1,13 +1,13 @@
 const APIURL = 'https://opentdb.com/api.php?amount=10&category=31&type=multiple';
-const question = document.getElementById('question');
-const options = Array.from(document.getElementsByClassName('option-text'));
-const quizStart = document.getElementById('start-quiz');
-const leaderboardBtn = document.getElementById('leaderboard-btn');
-const restart = document.getElementById('restart');
-const welcome = document.getElementById('welcome');
-const quiz = document.getElementById('quiz');
-const result = document.getElementById('result');
-const leaderboard = document.getElementById('leaderboard');
+const question = document.querySelector('#question');
+const options = Array.from(document.querySelectorAll('.option-text'));
+const quizStart = document.querySelector('#start-quiz');
+const leaderboardBtn = document.querySelector('#leaderboard-btn');
+const restart = document.querySelector('#restart');
+const welcome = document.querySelector('#welcome');
+const quiz = document.querySelector('#quiz');
+const result = document.querySelector('#result');
+const leaderboard = document.querySelector('#leaderboard');
 
 let currentQuestion = {};
 let acceptingAnswers = false;
@@ -38,34 +38,39 @@ const formatQuestion = (questionList) => {
  * Takes question from questionList,
  * edits html to display question and answers.
  */
-// const presentQuestions = (questionList) => {
-//     console.log(questionList);
-//     questionCounter++;
-//     question.innerHTML = questionList.question;
-//     options.forEach((option, index) => {
-//         option.innerHTML = questionList.answers[index];    
-//     });
-//     availableQuestions.splice[0];
-// };
-
 const presentQuestions = (availableQuestions) => {
+    if (availableQuestions.Length === 0 || questionCounter >= maxQuestions) {
+        quiz.classList.add('hidden');
+        result.classList.remove('hidden');
+    }
     questionCounter++;
-    const questionIndex = Math.floor(Math.random() * availableQuestions.length);
-    console.log(questionIndex);
-    presentedQuestion = availableQuestions[questionIndex];
+    presentedQuestion = availableQuestions[0];
     question.innerHTML = presentedQuestion.question;
     options.forEach((option, index) => {
         option.innerHTML = presentedQuestion.answers[index];    
     });
-    options.forEach(option => {
-        option.addEventListener('click', e => {
-            console.log(e.target);
-            const selectedOption = e.target;
-            checkAnswer(selectedOption);
-        });
-    });
-
+    availableQuestions.splice(question, 1);
+    acceptingAnswers = true;
 };
+
+options.forEach(option => {
+    option.addEventListener('click', e => {
+        if (!acceptingAnswers) return;
+
+        acceptingAnswers = false;
+        const selectedOption = e.target;
+        console.log(selectedOption);
+        console.log(presentedQuestion.correctAnswer);
+        console.log(selectedOption == presentedQuestion.correctAnswer);
+        if (selectedOption == presentedQuestion.correctAnswer) {
+            score++;
+            }
+        
+            setTimeout(() => {
+                presentQuestions(availableQuestions);
+            });           
+    });
+});
 
 
 
@@ -93,15 +98,6 @@ const restartQuiz = () => {
     welcome.classList.remove('hidden');
 }
  
-
-const checkAnswer = (selectedOption) => {
-    if (selectedOption == presentedQuestion.correctAnswer) {
-        score++;
-        }
-        availableQuestions.splice(question, 1);
-        presentQuestions(availableQuestions);
-}
-
 /**
  * Waits for questions to fetched from API
  * then resolves json,
