@@ -8,10 +8,11 @@ const welcome = document.querySelector('#welcome');
 const quiz = document.querySelector('#quiz');
 const result = document.querySelector('#result');
 const leaderboard = document.querySelector('#leaderboard');
+const currentScore = document.querySelector('#score');
+const finalScore = document.querySelector('#final-score');
+const home = document.querySelector('#home');
 
-let currentQuestion = {};
-let acceptingAnswers = false;
-let score = 0;
+let scoreCounter = 0;
 let questionCounter = 0;
 let availableQuestions = [];
 
@@ -38,10 +39,11 @@ const formatQuestion = (questionList) => {
  * Takes question from questionList,
  * edits html to display question and answers.
  */
-const presentQuestions = (availableQuestions) => {
-    if (availableQuestions.Length === 0 || questionCounter >= maxQuestions) {
+const presentQuestions = () => {
+    if (availableQuestions.length === 0 || questionCounter >= maxQuestions) {
         quiz.classList.add('hidden');
         result.classList.remove('hidden');
+        return;
     }
     questionCounter++;
     presentedQuestion = availableQuestions[0];
@@ -53,24 +55,16 @@ const presentQuestions = (availableQuestions) => {
     acceptingAnswers = true;
 };
 
-options.forEach(option => {
-    option.addEventListener('click', e => {
-        if (!acceptingAnswers) return;
+const checkAnswer = (e) => {
+    const selectedOption = e.target.innerHTML;
 
-        acceptingAnswers = false;
-        const selectedOption = e.target;
-        console.log(selectedOption);
-        console.log(presentedQuestion.correctAnswer);
-        console.log(selectedOption == presentedQuestion.correctAnswer);
-        if (selectedOption == presentedQuestion.correctAnswer) {
-            score++;
-            }
-        
-            setTimeout(() => {
-                presentQuestions(availableQuestions);
-            });           
-    });
-});
+    if (selectedOption == presentedQuestion.correctAnswer) {
+        scoreCounter++;
+        // currentScore.innerText = scoreCounter;
+        finalScore.innerText = scoreCounter;
+        }
+    presentQuestions();        
+};
 
 
 
@@ -96,6 +90,13 @@ const startQuiz = () => {
 const restartQuiz = () => {
     quiz.classList.add('hidden');
     welcome.classList.remove('hidden');
+    initialise();
+}
+
+const goHome = () => {
+    result.classList.add('hidden');
+    welcome.classList.remove('hidden');
+    initialise();
 }
  
 /**
@@ -111,11 +112,18 @@ const initialise = async() => {
     const formattedQuestions = await formatQuestion(fetchedQuestions.results);
     availableQuestions = [...formattedQuestions];
     console.log(availableQuestions);
-    presentQuestions(availableQuestions);
+    presentQuestions();
 };
 
 window.addEventListener("DOMContentLoaded", (event) => {
     quizStart.addEventListener('click', startQuiz);
     restart.addEventListener('click', restartQuiz);
+    home.addEventListener('click', goHome);
+    
     initialise();
+
+    // Add click event listener by option
+    options.forEach(option => {
+        option.addEventListener('click', checkAnswer);
+    })
 });
