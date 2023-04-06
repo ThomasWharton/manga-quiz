@@ -57,7 +57,13 @@ const presentQuestions = (availableQuestions) => {
     options.forEach((option, index) => {
         option.innerHTML = presentedQuestion.answers[index];    
     });
-    availableQuestions.splice(question, 1);
+    options.forEach(option => {
+        option.addEventListener('click', e => {
+            console.log(e.target);
+            const selectedOption = e.target;
+            checkAnswer(selectedOption);
+        });
+    });
 
 };
 
@@ -88,13 +94,12 @@ const restartQuiz = () => {
 }
  
 
-const checkAnswer = (selectedAnswer) => {
-    if (selectedAnswer === questionList.correctAnswer) {
+const checkAnswer = (selectedOption) => {
+    if (selectedOption == presentedQuestion.correctAnswer) {
         score++;
-        presentQuestions();
-        } else {
-            presentQuestions();
         }
+        availableQuestions.splice(question, 1);
+        presentQuestions(availableQuestions);
 }
 
 /**
