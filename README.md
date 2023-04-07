@@ -44,7 +44,16 @@ The background image was found on [freepik](https://www.freepik.com/ "freepik") 
 
 ### Colours
 
-Two colours which were preselected are the colours found in the Japanese flag. These are the colours of red and white. [Coolors](http://coolors.co "Coolors") was then used to lock in these 2 preselected colours and create a palette to be used for the quiz. 
+Two colours which were preselected are the colours found in the Japanese flag. These are the colours of red and white. [Coolors](http://coolors.co "Coolors") was then used to lock in these 2 preselected colours and create a palette to be used for the quiz.
+
+The colours and their uses are listed below.
+
+![Colour Palette](docs/screenshots/colour-palette.png)
+
+* #BC002D - This colour is used for each window, main logo and some text.
+* #FFFFFF - This colour is used for text and background colour for containers.
+* #818F82 - This colour is used for box shadow on buttons when active.
+* #FF7F11 - This colour is used for box shadow on button hover, prefix background and input text.
 
 ### Structure
 
@@ -59,12 +68,20 @@ The leaderboard can be accessed via the welcome window and will include a close 
 Wireframes have been created using [Balsamic](https://balsamiq.com "Balsamic"). These wireframes give a basic view of how the quiz will be laid out and structured. 
 
 ### Welcome Window
+![Welcome Window Mobile](docs/wireframes/welcome-mq-mobile.png)<br>
+![Welcome Window Desktop](docs/wireframes/welcome-mq-desktop.png)
 
 ### Game Window
+![Game Window Mobile](docs/wireframes/game-mq-mobile.png)<br>
+![Game Window Desktop](docs/wireframes/game-mq-desktop.png)
 
 ### Result Window
+![Result Window Mobile](docs/wireframes/result-mq-mobile.png)<br>
+![Result Window Desktop](docs/wireframes/result-mq-desktop.png)
 
 ### Leaderboard Window
+![Leaderboard Window Mobile](docs/wireframes/leaderboard-mq-mobile.png)<br>
+![Leaderboard Window Desktop](docs/wireframes/leaderboard-mq-desktop.png)
 
 ## Features
 
