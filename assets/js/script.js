@@ -14,6 +14,7 @@ const questionNumber = document.querySelector('#question-number');
 const finalScore = document.querySelector('#final-score');
 const home = document.querySelector('#home');
 const resultMessage = document.querySelector('#result-message');
+const username = document.querySelector('#username');
 
 
 let scoreCounter = 0;
@@ -142,8 +143,17 @@ const goHome = () => {
     initialise();
 }
 
+const submitScore = () => {
+    const submittedScore = {
+        score: finalScore,
+        user: username.value
+    };    
+    highScores.push(submittedScore);
+    console.log(highScores);
+}
+
 const openLeaderboard = () => {
-    
+
 }
  
 /**
@@ -176,7 +186,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     
     initialise();
 
-    // Add click event listener for options
+    // Add click event listener for answer options
     options.forEach(option => {
         option.addEventListener('click', checkAnswer);
     })
