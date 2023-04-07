@@ -155,7 +155,7 @@ const submitScore = () => {
 };
 
 const openLeaderboard = () => {
-    leaderboardUsers.forEach((leaderboardUser, index) => {
+    leaderboardUsers.forEach((leaderboardUser) => {
         leaderboardUser.innerHTML = highScores.user[index];    
     });
     leaderboardScores.forEach((leaderboardScore, index) => {
@@ -197,8 +197,10 @@ const initialise = async() => {
 window.addEventListener("DOMContentLoaded", (event) => {
 
     quizStart.addEventListener('click', startQuiz);
+    leaderboardBtn.addEventListener('click', openLeaderboard);
     restart.addEventListener('click', restartQuiz);
     home.addEventListener('click', goHome);
+    leaderboard
     
     initialise();
 

@@ -44,7 +44,7 @@ The background image was found on [freepik](https://www.freepik.com/ "freepik") 
 
 ### Colours
 
-Two colours which were preselected are the colours found in the Japanese flag. These are the colours of red and white. A typical grey colour was also selected to imitate the style of manga, primarily being printed in black and white. [Coolors](http://coolors.co "Coolors") was then used to lock in these 3 preselected colours and create a palette to be used for the quiz. 
+Two colours which were preselected are the colours found in the Japanese flag. These are the colours of red and white. [Coolors](http://coolors.co "Coolors") was then used to lock in these 2 preselected colours and create a palette to be used for the quiz. 
 
 ### Structure
 
