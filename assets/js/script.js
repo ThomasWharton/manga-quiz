@@ -156,10 +156,10 @@ const submitScore = () => {
 
 const openLeaderboard = () => {
     leaderboardUsers.forEach((leaderboardUser) => {
-        leaderboardUser.innerHTML = highScores.user[index];    
+        leaderboardUser.innerHTML = highScores.user;    
     });
-    leaderboardScores.forEach((leaderboardScore, index) => {
-        leaderboardScore.innerHTML = highScores.score[index];
+    leaderboardScores.forEach((leaderboardScore) => {
+        leaderboardScore.innerHTML = highScores.score;
     });
     welcome.classList.add('hidden');
     leaderboard.classList.remove('hidden');

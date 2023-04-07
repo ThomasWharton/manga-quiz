@@ -165,4 +165,27 @@ input:focus {
 
 /* Leaderboard window styling */
 
+.leaderboard-container {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    background-color: var(--white);
+    color: var(--crimson);
+    text-align: center;
+}
+
+.leaderboard-prefix {
+    padding: 1rem;
+    background-color: var(--orange);
+    color: var(--white);
+}
+
+/* .leaderboard-user {
+    text-align: left;
+}
+
+.leaderboard-score {
+    text-align: right;
+} */
 
