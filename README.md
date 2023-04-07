@@ -1,4 +1,5 @@
 # Manga Quiz!
+![Responsive Mockup](docs/screenshots/responsive-mockup.png)
 
 ## Introduction
 
