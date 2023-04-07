@@ -139,3 +139,21 @@ The leaderboard window can be accessed via a button on the welcome window. This 
 * [W3C Markup Validation](https://validator.w3.org/#validate_by_input "W3C Markup Validation")
 * [W3C CSS Validation](https://jigsaw.w3.org/css-validator/#validate_by_input "W3C CSS Validation")
 * [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/ "WAVE Web Accessibility Evaluation Tool")
+
+## Deployment
+
+The site was deployed using GitHub. The steps for deployment are as follows:
+
+1. Navigate to repository for GitHub project.
+2. Navigate to settings tab.
+3. Navigate to page settings under **Code and automation**.
+4. Under **Build and deployment** select **Deploy from branch** as source.
+5. Ensure the main branch is selected and click save.
+6. After these steps have been completed, the page should go live within a few minutes.
+7. Your live project will be viewable from http://**your-username**.github.io/**your-project-title**/
+
+## Credits
+
+I would like to thank my mentor [Simen Daehlin](https://github.com/Eventyret "Simen Daehlin") for all his advice. For pushing me to learn new things and think outside the box.
+
+I would also like to thank my friend [Marco](https://github.com/marconett "Marco") for all the help he gave me in troubleshooting issues with my project and his patience in helping me understand what I was doing.
