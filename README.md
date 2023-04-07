@@ -114,3 +114,28 @@ The result window will show a congratulation, or commiseration message depending
 ### Leaderboard Window
 
 The leaderboard window can be accessed via a button on the welcome window. This will show the best 5 scores for the quiz. It will feature the username, score and position on the leaderboard for the user.
+
+## Testing
+
+## Technologies Used
+
+### Languages
+
+* [HTML](https://en.wikipedia.org/wiki/HTML "HTML")
+* [CSS](https://en.wikipedia.org/wiki/CSS "CSS")
+* [JavaScript](https://en.wikipedia.org/wiki/JavaScript "JavaScript")
+
+### Libraries & Framework
+
+* [Google Fonts](https://fonts.google.com "Google Fonts")
+
+### Tools
+
+* [GitHub](https://github.com "GitHub")
+* [Gitpod](https://gitpod.io "Gitpod")
+* [Balsamic](https://balsamiq.com "Balsamic")
+* [Coolors](http://coolors.co "Coolors")
+* [DevTools](https://developer.chrome.com/docs/devtools "DevTools")
+* [W3C Markup Validation](https://validator.w3.org/#validate_by_input "W3C Markup Validation")
+* [W3C CSS Validation](https://jigsaw.w3.org/css-validator/#validate_by_input "W3C CSS Validation")
+* [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/ "WAVE Web Accessibility Evaluation Tool")

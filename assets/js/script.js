@@ -68,7 +68,8 @@ const presentQuestions = () => {
         finalScore.innerText = scoreCounter;
         if (parseInt(finalScore.innerText) < 5) {
             resultMessage.innerText = 'Bad Luck =[';
-        };    
+        }
+        resultMessage.innerText = 'Well Done! =]';    
         quiz.classList.add('hidden');
         counters.classList.add('hidden');
         result.classList.remove('hidden');
