@@ -5,10 +5,12 @@ const quizStart = document.querySelector('#start-quiz');
 const leaderboardBtn = document.querySelector('#leaderboard-btn');
 const restart = document.querySelector('#restart');
 const welcome = document.querySelector('#welcome');
+const counters = document.querySelector('#counters');
 const quiz = document.querySelector('#quiz');
 const result = document.querySelector('#result');
 const leaderboard = document.querySelector('#leaderboard');
-const currentScore = document.querySelector('#score');
+const currentScore = document.querySelector('#current-score');
+const questionNumber = document.querySelector('#question-number');
 const finalScore = document.querySelector('#final-score');
 const home = document.querySelector('#home');
 const resultMessage = document.querySelector('#result-message');
@@ -65,10 +67,12 @@ const presentQuestions = () => {
         }
         
         quiz.classList.add('hidden');
+        counters.classList.add('hidden');
         result.classList.remove('hidden');
         return;
     }
     questionCounter++;
+    questionNumber.innerText = questionCounter;
     presentedQuestion = availableQuestions[0];
     question.innerHTML = presentedQuestion.question;
     options.forEach((option, index) => {
@@ -88,7 +92,7 @@ const checkAnswer = (e) => {
 
     if (selectedOption == presentedQuestion.correctAnswer) {
         scoreCounter++;
-        // currentScore.innerText = scoreCounter;        
+        currentScore.innerText = scoreCounter;        
     }
     presentQuestions();        
 };
@@ -102,10 +106,12 @@ const checkAnswer = (e) => {
  */
 const startQuiz = () => {
     questionCounter = 0;
-    score = 0;
+    scoreCounter = 0;
     resultMessage.innerText = "";
     welcome.classList.add('hidden');
+    counters.classList.remove('hidden');
     quiz.classList.remove('hidden');
+
 }
 
 /**
@@ -115,6 +121,7 @@ const startQuiz = () => {
  */
 const restartQuiz = () => {
     quiz.classList.add('hidden');
+    counters.classList.add('hidden');
     welcome.classList.remove('hidden');
     initialise();
 }
