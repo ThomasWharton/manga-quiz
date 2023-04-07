@@ -15,6 +15,7 @@ const finalScore = document.querySelector('#final-score');
 const home = document.querySelector('#home');
 const resultMessage = document.querySelector('#result-message');
 const username = document.querySelector('#username');
+const submit = document.querySelector('#submit-score');
 
 
 let scoreCounter = 0;
@@ -189,5 +190,9 @@ window.addEventListener("DOMContentLoaded", (event) => {
     // Add click event listener for answer options
     options.forEach(option => {
         option.addEventListener('click', checkAnswer);
-    })
+    });
+    
+    //Add click event listener for submit score button
+    submit.addEventListener('click', submitScore);
+
 });
