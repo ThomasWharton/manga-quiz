@@ -19,6 +19,7 @@ const resultMessage = document.querySelector('#result-message');
 let scoreCounter = 0;
 let questionCounter = 0;
 let availableQuestions = [];
+let highScores = [];
 
 /**
  * 
@@ -139,6 +140,10 @@ const goHome = () => {
     result.classList.add('hidden');
     welcome.classList.remove('hidden');
     initialise();
+}
+
+const openLeaderboard = () => {
+    
 }
  
 /**
