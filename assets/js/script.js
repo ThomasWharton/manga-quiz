@@ -107,6 +107,8 @@ const checkAnswer = (e) => {
 const startQuiz = () => {
     questionCounter = 0;
     scoreCounter = 0;
+    questionNumber.innerText = '1';
+    currentScore.innerText = scoreCounter;
     resultMessage.innerText = "";
     welcome.classList.add('hidden');
     counters.classList.remove('hidden');
@@ -120,6 +122,8 @@ const startQuiz = () => {
  * thus returning to welcome window.
  */
 const restartQuiz = () => {
+    questionCounter = 0;
+    scoreCounter = 0;    
     quiz.classList.add('hidden');
     counters.classList.add('hidden');
     welcome.classList.remove('hidden');
