@@ -16,6 +16,8 @@ const home = document.querySelector('#home');
 const resultMessage = document.querySelector('#result-message');
 const username = document.querySelector('#username');
 const submit = document.querySelector('#submit-score');
+const leaderboardUsers = Array.from(document.querySelectorAll('.leaderboard-user'));
+const leaderboardScores = Array.from(document.querySelectorAll('.leaderboard-score'));
 
 
 let scoreCounter = 0;
@@ -63,12 +65,9 @@ const shuffleAnswers = (answersArray) => {
 const presentQuestions = () => {
     if (availableQuestions.length === 0) {
         finalScore.innerText = scoreCounter;
-        if (finalScore > 5) {
-            resultMessage.innerText = 'Well Done! =]'
-        } else {
+        if (parseInt(finalScore.innerText) < 5) {
             resultMessage.innerText = 'Bad Luck =[';
-        }
-        
+        }        
         quiz.classList.add('hidden');
         counters.classList.add('hidden');
         result.classList.remove('hidden');
