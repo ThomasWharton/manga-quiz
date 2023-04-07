@@ -38,9 +38,9 @@ const formatQuestion = (questionList) => {
             question: q.question,
             correctAnswer: q.correct_answer,
             answers: shuffleAnswers([...q.incorrect_answers, q.correct_answer])
-        }
-    })
-}
+        };
+    });
+};
 
 /**
  * 
@@ -52,7 +52,7 @@ const formatQuestion = (questionList) => {
  */
 const shuffleAnswers = (answersArray) => {
     return answersArray.sort(() => Math.random() - 0.5);
-}
+};
 
 /**
  * Checks available question length,
@@ -67,12 +67,12 @@ const presentQuestions = () => {
         finalScore.innerText = scoreCounter;
         if (parseInt(finalScore.innerText) < 5) {
             resultMessage.innerText = 'Bad Luck =[';
-        }        
+        };    
         quiz.classList.add('hidden');
         counters.classList.add('hidden');
         result.classList.remove('hidden');
         return;
-    }
+    };
     questionCounter++;
     questionNumber.innerText = questionCounter;
     presentedQuestion = availableQuestions[0];
@@ -115,8 +115,7 @@ const startQuiz = () => {
     welcome.classList.add('hidden');
     counters.classList.remove('hidden');
     quiz.classList.remove('hidden');
-
-}
+};
 
 /**
  * Adds hidden class to quiz window
@@ -130,7 +129,7 @@ const restartQuiz = () => {
     counters.classList.add('hidden');
     welcome.classList.remove('hidden');
     initialise();
-}
+};
 
 /**
  * Adds hidden class to result window
@@ -141,7 +140,7 @@ const goHome = () => {
     result.classList.add('hidden');
     welcome.classList.remove('hidden');
     initialise();
-}
+};
 
 const submitScore = () => {
     const submittedScore = {
@@ -152,11 +151,20 @@ const submitScore = () => {
     highScores.sort((a, b) => b.score - a.score);
     highScores.splice(5);
     console.log(highScores);
-}
+};
 
 const openLeaderboard = () => {
+    leaderboardUsers.forEach((leaderboardUser, index) => {
+        leaderboardUser.innerHTML = highScores.user[index];    
+    });
+    leaderboardScores.forEach((leaderboardScore, index) => {
+        leaderboardScore.innerHTML = highScores.score[index];
+    });
+    welcome.classList.add('hidden');
+    leaderboard.classList.remove('hidden');
     
-}
+    
+};
  
 /**
  * Waits for questions to be fetched from API
