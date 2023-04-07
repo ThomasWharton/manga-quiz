@@ -146,15 +146,17 @@ const goHome = () => {
 
 const submitScore = () => {
     const submittedScore = {
-        score: finalScore,
+        score: finalScore.innerText,
         user: username.value
     };    
     highScores.push(submittedScore);
+    highScores.sort((a, b) => b.score - a.score);
+    highScores.splice(5);
     console.log(highScores);
 }
 
 const openLeaderboard = () => {
-
+    
 }
  
 /**
