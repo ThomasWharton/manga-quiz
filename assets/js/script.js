@@ -18,6 +18,7 @@ const username = document.querySelector('#username');
 const submit = document.querySelector('#submit-score');
 const leaderboardUsers = Array.from(document.querySelectorAll('.leaderboard-user'));
 const leaderboardScores = Array.from(document.querySelectorAll('.leaderboard-score'));
+const exitLeaderboard = document.querySelector('#exit-leaderboard');
 
 
 let scoreCounter = 0;
@@ -162,9 +163,14 @@ const openLeaderboard = () => {
     });
     welcome.classList.add('hidden');
     leaderboard.classList.remove('hidden');
-    
-    
+
+    exitLeaderboard.addEventListener('click', closeLeaderboard);  
 };
+
+const closeLeaderboard = () => {    
+    leaderboard.classList.add('hidden');
+    welcome.classList.remove('hidden');
+}
  
 /**
  * Waits for questions to be fetched from API
