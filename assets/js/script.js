@@ -11,19 +11,19 @@ const leaderboard = document.querySelector('#leaderboard');
 const currentScore = document.querySelector('#score');
 const finalScore = document.querySelector('#final-score');
 const home = document.querySelector('#home');
+const resultMessage = document.querySelector('#result-message');
+
 
 let scoreCounter = 0;
 let questionCounter = 0;
 let availableQuestions = [];
 
-// Constants
-const correctAnswerPoint = 1;
-const maxQuestions = 10;
-
 /**
- * Takes question fetched from api,
- * removes unnecessary data and
- * returns formatted question
+ * 
+ * @param {*} questionList 
+ * Removes unneccessary data
+ * @returns 
+ * Formatted question
  */
 const formatQuestion = (questionList) => {
     return questionList?.map(q => {
@@ -35,16 +35,35 @@ const formatQuestion = (questionList) => {
     })
 }
 
+/**
+ * 
+ * @param {*} answersArray 
+ * Gives negative or positive number to each answer
+ * and sorts based on positivity
+ * @returns 
+ * Shuffled array
+ */
 const shuffleAnswers = (answersArray) => {
     return answersArray.sort(() => Math.random() - 0.5);
 }
 
 /**
- * Takes question from questionList,
- * edits html to display question and answers.
+ * Checks available question length,
+ * if equal to 0, goes to result window.
+ * If not equal to 0, takes question from availableQuestions array
+ * @returns 
+ * Question and answers from question and replaces innerHTML for quiz window.
+ * Removes current question from array.
  */
 const presentQuestions = () => {
-    if (availableQuestions.length === 0 || questionCounter >= maxQuestions) {
+    if (availableQuestions.length === 0) {
+        finalScore.innerText = scoreCounter;
+        if (finalScore > 5) {
+            resultMessage.innerText = 'Well Done! =]'
+        } else {
+            resultMessage.innerText = 'Bad Luck =[';
+        }
+        
         quiz.classList.add('hidden');
         result.classList.remove('hidden');
         return;
@@ -56,21 +75,23 @@ const presentQuestions = () => {
         option.innerHTML = presentedQuestion.answers[index];    
     });
     availableQuestions.splice(question, 1);
-    acceptingAnswers = true;
 };
 
+/**
+ * 
+ * @param {*} e
+ * Checks selected answer and if correct adds point
+ * and then calls for next question
+ */
 const checkAnswer = (e) => {
     const selectedOption = e.target.innerHTML;
 
     if (selectedOption == presentedQuestion.correctAnswer) {
         scoreCounter++;
-        // currentScore.innerText = scoreCounter;
-        finalScore.innerText = scoreCounter;
-        }
+        // currentScore.innerText = scoreCounter;        
+    }
     presentQuestions();        
 };
-
-
 
 
 /**
@@ -82,6 +103,7 @@ const checkAnswer = (e) => {
 const startQuiz = () => {
     questionCounter = 0;
     score = 0;
+    resultMessage.innerText = "";
     welcome.classList.add('hidden');
     quiz.classList.remove('hidden');
 }
@@ -97,6 +119,11 @@ const restartQuiz = () => {
     initialise();
 }
 
+/**
+ * Adds hidden class to result window
+ * then removes hidden class from welcome window
+ * returns to welcome window
+ */
 const goHome = () => {
     result.classList.add('hidden');
     welcome.classList.remove('hidden');
@@ -104,7 +131,7 @@ const goHome = () => {
 }
  
 /**
- * Waits for questions to fetched from API
+ * Waits for questions to be fetched from API
  * then resolves json,
  * formats questions using formatQuestion function,
  * presents question in html.
@@ -119,14 +146,21 @@ const initialise = async() => {
     presentQuestions();
 };
 
+/**
+ * Checks for DOM content to be loaded
+ * Sets click event listeners to start, restart and home buttons.
+ * Runs initialise function.
+ * Sets click event listeners to answer options
+ */
 window.addEventListener("DOMContentLoaded", (event) => {
+
     quizStart.addEventListener('click', startQuiz);
     restart.addEventListener('click', restartQuiz);
     home.addEventListener('click', goHome);
     
     initialise();
 
-    // Add click event listener by option
+    // Add click event listener for options
     options.forEach(option => {
         option.addEventListener('click', checkAnswer);
     })
