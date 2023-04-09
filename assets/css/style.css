@@ -125,6 +125,7 @@ h2 {
 .option-container {
     display: flex;
     flex-direction: row;
+    align-items: center;
     margin-bottom: 0.5rem;
     width: 100%;
     background-color: var(--white);
@@ -141,6 +142,8 @@ h2 {
     padding: 1rem;
     background-color: var(--orange);
     color: var(--white);
+    max-width: 3rem;
+    height: 100%;
 }
 
 .option-text {
