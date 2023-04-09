@@ -7,6 +7,7 @@ const welcome = document.querySelector('#welcome');
 const counters = document.querySelector('#counters');
 const quiz = document.querySelector('#quiz');
 const result = document.querySelector('#result');
+const instructions = document.querySelector('#instructions')
 const leaderboard = document.querySelector('#leaderboard');
 const currentScore = document.querySelector('#current-score');
 const questionNumber = document.querySelector('#question-number');
@@ -18,6 +19,8 @@ const submit = document.querySelector('#submit-score');
 const leaderboardUsers = Array.from(document.querySelectorAll('.leaderboard-user'));
 const leaderboardScores = Array.from(document.querySelectorAll('.leaderboard-score'));
 const exitLeaderboard = document.querySelector('#exit-leaderboard');
+const openInstructionsBtn = document.querySelector('#open-instructions-btn');
+const closeInstructionsBtn = document.querySelector('#close-instructions-btn');
 
 const APIURL = 'https://opentdb.com/api.php?amount=10&category=31&type=multiple';
 let scoreCounter = 0;
@@ -154,6 +157,18 @@ const submitScore = () => {
     highScores.splice(5);
 };
 
+const openInstructions = () => {
+    welcome.classList.add('hidden');
+    instructions.classList.remove('hidden');
+
+    closeInstructionsBtn.addEventListener('click', closeInstructions);
+}
+
+const closeInstructions = () => {
+    instructions.classList.add('hidden');
+    welcome.classList.remove('hidden');
+}
+
 const openLeaderboard = () => {
     leaderboardUsers.forEach((leaderboardUser) => {
         leaderboardUser.innerHTML = highScores.user;    
@@ -195,6 +210,7 @@ const initialise = async() => {
 window.addEventListener("DOMContentLoaded", (event) => {
 
     quizStart.addEventListener('click', startQuiz);
+    openInstructionsBtn.addEventListener('click', openInstructions);
     leaderboardBtn.addEventListener('click', openLeaderboard);
     restart.addEventListener('click', restartQuiz);
     home.addEventListener('click', goHome);
