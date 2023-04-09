@@ -42,15 +42,12 @@ const formatQuestion = (questionList) => {
 
 /**
  * 
- * @param {*} answersArray 
+ * @param {[]} answersArray 
  * Gives negative or positive number to each answer
  * and sorts based on positivity
- * @returns 
- * Shuffled array
+ * @returns Shuffled array
  */
-const shuffleAnswers = (answersArray) => {
-    return answersArray.sort(() => Math.random() - 0.5);
-};
+const shuffleAnswers = (answersArray) => answersArray.sort(() => Math.random() - 0.5);
 
 /**
  * Checks available question length,
