@@ -7,6 +7,8 @@
     --white: #fff;
     --gray: #817F82;
     --orange: #FF7F11;
+    --correct-green: #1AFF00;
+    --incorrect-red: #FF1515;
     --logo-font: 'Bangers', cursive;
     --main-font: 'BioRhyme', serif;
 }
@@ -151,6 +153,14 @@ h2 {
     color: var(--crimson);
     width: 100%;
     text-align: center;
+}
+
+.correct {
+    background-color: var(--correct-green);
+}
+
+.incorrect {
+    background-color: var(--incorrect-red);
 }
 
 /* Results window styling */

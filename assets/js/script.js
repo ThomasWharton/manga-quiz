@@ -86,13 +86,20 @@ const presentQuestions = () => {
  * and then calls for next question
  */
 const checkAnswer = (event) => {
-    const selectedOption = event.target.innerHTML;
+    const selectedOption = event.target;
+    const selectedAnswer = selectedOption.innerHTML;
 
-    if (selectedOption == presentedQuestion.correctAnswer) {
+    if (selectedAnswer == presentedQuestion.correctAnswer) {
         scoreCounter++;
-        currentScore.innerText = scoreCounter;        
-    }
-    presentQuestions();        
+        currentScore.innerText = scoreCounter;  
+    } 
+    const applyClass = selectedAnswer == presentedQuestion.correctAnswer ? 'correct' : 'incorrect';
+    selectedOption.parentElement.classList.add(applyClass);
+
+    setTimeout(() => {
+        selectedOption.parentElement.classList.remove(applyClass);
+        presentQuestions(); 
+    }, 500);           
 };
 
 
