@@ -13,158 +13,158 @@
     <title>Manga Quiz</title>
 </head>
 <body>
-  <!-- Main container for positioning elements -->
-  <div id="main-container" class="flex-center flex-column">
+    <!-- Main container for positioning elements -->
+    <main id="main-container" class="flex-center flex-column">
 
-    <!-- Logo -->
-    <div id="logo">
-        <h1>Manga Quiz!</h1>
-    </div>
+        <!-- Logo -->
+        <div id="logo">
+            <h1>Manga Quiz!</h1>
+        </div>
 
-    <div id="counters" class="flex-column flex-center hidden">            
-        <h2 class="counter">Question: <span id="question-number">1</span>/10</h2>
-        <h2 class="counter">Score: <span  id="current-score">0</span></h2>
-    </div>
-    
-    <!-- Container for window -->
-    <div id="window-container" class="window flex-center flex-column">
+        <div id="counters" class="flex-column flex-center hidden">            
+            <h2 class="counter">Question: <span id="question-number">1</span>/10</h2>
+            <h2 class="counter">Score: <span  id="current-score">0</span></h2>
+        </div>
+        
+        <!-- Container for window -->
+        <div id="window-container" class="window flex-center flex-column">
 
-        <!-- Welcome Window -->
-        <div id="welcome">
-            <!-- Welcome message -->
-            <h2 class="uppercase">Welcome!</h2>
-            <p>
-                Always thought of yourself as a super manga and anime fan?<br>
-                Well now you can put that to the test with this amazing manga quiz!<br>
-                See how many questions you can get right and find out if you're a super manga fan or not!
-            </p>
+            <!-- Welcome Window -->
+            <div id="welcome">
+                <!-- Welcome message -->
+                <h2 class="uppercase">Welcome!</h2>
+                <p>
+                    Always thought of yourself as a super manga and anime fan?<br>
+                    Well now you can put that to the test with this amazing manga quiz!<br>
+                    See how many questions you can get right and find out if you're a super manga fan or not!
+                </p>
 
-            <!-- Instructions -->
-            <h2 class="uppercase">Instructions</h2>
-            <p>
-                To begin the quiz, click on the start button below!<br>
-                You will be presented with a question and 4 possible answers.<br>
-                Once you have made up your mind, click on your answer and the next question will load.<br>
-                Upon completing the quiz, you will be shown your results and an option to submit your scores with a username of your choosing.<br>
-                You can restart the quiz at anytime by clicking the restart button on the game window.
-            </p>
-            <div class="flex-column flex-center">
+                <!-- Instructions -->
+                <h2 class="uppercase">Instructions</h2>
+                <p>
+                    To begin the quiz, click on the start button below!<br>
+                    You will be presented with a question and 4 possible answers.<br>
+                    Once you have made up your mind, click on your answer and the next question will load.<br>
+                    Upon completing the quiz, you will be shown your results and an option to submit your scores with a username of your choosing.<br>
+                    You can restart the quiz at anytime by clicking the restart button on the game window.
+                </p>
+                <div class="flex-column flex-center">
+                    <button 
+                        type="button" 
+                        class="btn uppercase" 
+                        id="start-quiz">
+                        Start!
+                    </button>
+                    <button 
+                        type="button" 
+                        class="btn uppercase" 
+                        id="leaderboard-btn">
+                        Leaderboard
+                    </button>
+                </div>
+            </div>
+
+            <!-- Quiz Window -->
+            <div id="quiz" class="window flex-column flex-center hidden">
+
+                <h2 id="question">This is a question?</h2>
+
+                <div class="option-container">
+                    <p class="option-prefix">A</p>
+                    <p class="option-text">Option 1</p>
+                </div>
+
+                <div class="option-container">
+                    <p class="option-prefix">B</p>
+                    <p class="option-text">Option 2</p>
+                </div>
+
+                <div class="option-container">
+                    <p class="option-prefix">C</p>
+                    <p class="option-text">Option 3</p>
+                </div>
+
+                <div class="option-container">
+                    <p class="option-prefix">D</p>
+                    <p class="option-text">Option 4</p>
+                </div>
+
                 <button 
                     type="button" 
                     class="btn uppercase" 
-                    id="start-quiz">
-                    Start!
+                    id="restart">
+                    Restart
+                </button>
+            </div>
+
+            <!-- Results Window -->
+            <div id="result" class="window flex-column flex-center hidden">
+                <h2><span id="result-message">Well done =]</span><br> You scored <span id="final-score">0</span> out of 10.</h2>
+                <p>Submit your score to the leader board by entering your username below!</p>
+                <input
+                    type="text"
+                    name="username"
+                    id="username"
+                    placeholder="Username"
+                    required
+                />
+                <button 
+                    type="button" 
+                    class="btn uppercase" 
+                    id="submit-score">
+                    Submit
                 </button>
                 <button 
                     type="button" 
                     class="btn uppercase" 
-                    id="leaderboard-btn">
-                    Leaderboard
-                </button>
+                    id="home">
+                    Home
+                </button>            
+            </div>
+            <div id="leaderboard" class="window flex-column flex-center hidden">
+                <h2>Leaderboard</h2>
+
+                <div class="leaderboard-container" class="flex-center">
+                    <p class="leaderboard-prefix">1.</p>
+                    <p class="leaderboard-user">User 1</p>
+                    <p class="leaderboard-score">0</p>
+                </div>
+
+                <div class="leaderboard-container" class="flex-center">
+                    <p class="leaderboard-prefix">2.</p>
+                    <p class="leaderboard-user">User 2</p>
+                    <p class="leaderboard-score">0</p>
+                </div>
+
+                <div class="leaderboard-container" class="flex-center">
+                    <p class="leaderboard-prefix">3.</p>
+                    <p class="leaderboard-user">User 3</p>
+                    <p class="leaderboard-score">0</p>
+                </div>
+
+                <div class="leaderboard-container" class="flex-center">
+                    <p class="leaderboard-prefix">4.</p>
+                    <p class="leaderboard-user">User 4</p>
+                    <p class="leaderboard-score">0</p>
+                </div>
+
+                <div class="leaderboard-container">
+                    <p class="leaderboard-prefix">5.</p>
+                    <p class="leaderboard-user">User 5</p>
+                    <p class="leaderboard-score">0</p>
+                </div>
+                
+                <button 
+                    type="button" 
+                    class="btn uppercase" 
+                    id="exit-leaderboard">
+                    Exit                
+                </button>   
             </div>
         </div>
+    </main>
 
-        <!-- Quiz Window -->
-        <div id="quiz" class="window flex-column flex-center hidden">
-
-            <h2 id="question">This is a question?</h2>
-
-            <div class="option-container">
-                <p class="option-prefix">A</p>
-                <p class="option-text">Option 1</p>
-            </div>
-
-            <div class="option-container">
-                <p class="option-prefix">B</p>
-                <p class="option-text">Option 2</p>
-            </div>
-
-            <div class="option-container">
-                <p class="option-prefix">C</p>
-                <p class="option-text">Option 3</p>
-            </div>
-
-            <div class="option-container">
-                <p class="option-prefix">D</p>
-                <p class="option-text">Option 4</p>
-            </div>
-
-            <button 
-                type="button" 
-                class="btn uppercase" 
-                id="restart">
-                Restart
-            </button>
-        </div>
-
-        <!-- Results Window -->
-        <div id="result" class="window flex-column flex-center hidden">
-            <h2><span id="result-message">Well done =]</span><br> You scored <span id="final-score">0</span> out of 10.</h2>
-            <p>Submit your score to the leader board by entering your username below!</p>
-            <input
-                type="text"
-                name="username"
-                id="username"
-                placeholder="Username"
-                required
-            />
-            <button 
-                type="button" 
-                class="btn uppercase" 
-                id="submit-score">
-                Submit
-            </button>
-            <button 
-                type="button" 
-                class="btn uppercase" 
-                id="home">
-                Home
-            </button>            
-        </div>
-        <div id="leaderboard" class="window flex-column flex-center hidden">
-            <h2>Leaderboard</h2>
-
-            <div class="leaderboard-container" class="flex-center">
-                <p class="leaderboard-prefix">1.</p>
-                <p class="leaderboard-user">User 1</p>
-                <p class="leaderboard-score">0</p>
-            </div>
-
-            <div class="leaderboard-container" class="flex-center">
-                <p class="leaderboard-prefix">2.</p>
-                <p class="leaderboard-user">User 2</p>
-                <p class="leaderboard-score">0</p>
-            </div>
-
-            <div class="leaderboard-container" class="flex-center">
-                <p class="leaderboard-prefix">3.</p>
-                <p class="leaderboard-user">User 3</p>
-                <p class="leaderboard-score">0</p>
-            </div>
-
-            <div class="leaderboard-container" class="flex-center">
-                <p class="leaderboard-prefix">4.</p>
-                <p class="leaderboard-user">User 4</p>
-                <p class="leaderboard-score">0</p>
-            </div>
-
-            <div class="leaderboard-container">
-                <p class="leaderboard-prefix">5.</p>
-                <p class="leaderboard-user">User 5</p>
-                <p class="leaderboard-score">0</p>
-            </div>
-            
-            <button 
-                type="button" 
-                class="btn uppercase" 
-                id="exit-leaderboard">
-                Exit                
-            </button>   
-        </div>
-    </div>
-  </div>
-
-  <script src="assets/js/script.js"></script>
+    <script src="assets/js/script.js"></script>
     
 </body>
 </html>

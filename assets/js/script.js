@@ -41,7 +41,6 @@ const formatQuestion = (questionList) => {
 };
 
 /**
- * 
  * @param {[]} answersArray 
  * Gives negative or positive number to each answer
  * and sorts based on positivity
@@ -82,7 +81,7 @@ const presentQuestions = () => {
 
 /**
  * 
- * @param {*} e
+ * @param {event}
  * Checks selected answer and if correct adds point
  * and then calls for next question
  */
@@ -100,8 +99,7 @@ const checkAnswer = (event) => {
 /**
  * Sets questionCounter and score to 0,
  * adds formattedQuestions to availableQuestion array,
- * logs available questions to console and
- * gets next question.
+ * and gets next question.
  */
 const startQuiz = () => {
     questionCounter = 0;
@@ -172,7 +170,6 @@ const closeLeaderboard = () => {
  * then resolves json,
  * formats questions using formatQuestion function,
  * presents question in html.
- * 
  */
 const initialise = async() => {
     const res = await fetch(APIURL);
