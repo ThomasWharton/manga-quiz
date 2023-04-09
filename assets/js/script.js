@@ -1,4 +1,3 @@
-const APIURL = 'https://opentdb.com/api.php?amount=10&category=31&type=multiple';
 const question = document.querySelector('#question');
 const options = Array.from(document.querySelectorAll('.option-text'));
 const quizStart = document.querySelector('#start-quiz');
@@ -20,18 +19,16 @@ const leaderboardUsers = Array.from(document.querySelectorAll('.leaderboard-user
 const leaderboardScores = Array.from(document.querySelectorAll('.leaderboard-score'));
 const exitLeaderboard = document.querySelector('#exit-leaderboard');
 
-
+const APIURL = 'https://opentdb.com/api.php?amount=10&category=31&type=multiple';
 let scoreCounter = 0;
 let questionCounter = 0;
 let availableQuestions = [];
 let highScores = [];
 
 /**
- * 
- * @param {*} questionList 
  * Removes unneccessary data
- * @returns 
- * Formatted question
+ * @param {[]} questionList 
+ * @returns Formatted question
  */
 const formatQuestion = (questionList) => {
     return questionList?.map(q => {
@@ -92,8 +89,8 @@ const presentQuestions = () => {
  * Checks selected answer and if correct adds point
  * and then calls for next question
  */
-const checkAnswer = (e) => {
-    const selectedOption = e.target.innerHTML;
+const checkAnswer = (event) => {
+    const selectedOption = event.target.innerHTML;
 
     if (selectedOption == presentedQuestion.correctAnswer) {
         scoreCounter++;
