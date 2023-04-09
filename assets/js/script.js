@@ -152,7 +152,6 @@ const submitScore = () => {
     highScores.push(submittedScore);
     highScores.sort((a, b) => b.score - a.score);
     highScores.splice(5);
-    console.log(highScores);
 };
 
 const openLeaderboard = () => {
@@ -185,7 +184,6 @@ const initialise = async() => {
     const fetchedQuestions = await res.json();
     const formattedQuestions = await formatQuestion(fetchedQuestions.results);
     availableQuestions = [...formattedQuestions];
-    console.log(availableQuestions);
     presentQuestions();
 };
 
