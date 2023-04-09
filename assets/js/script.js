@@ -66,10 +66,11 @@ const shuffleAnswers = (answersArray) => {
 const presentQuestions = () => {
     if (availableQuestions.length === 0) {
         finalScore.innerText = scoreCounter;
-        if (parseInt(finalScore.innerText) < 5) {
+        if (+finalScore.innerText < 5) {
             resultMessage.innerText = 'Bad Luck =[';
-        }
-        resultMessage.innerText = 'Well Done! =]';    
+        } else {
+            resultMessage.innerText = 'Well Done! =]';
+        }            
         quiz.classList.add('hidden');
         counters.classList.add('hidden');
         result.classList.remove('hidden');
