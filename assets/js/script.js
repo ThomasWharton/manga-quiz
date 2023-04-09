@@ -99,7 +99,7 @@ const checkAnswer = (event) => {
     setTimeout(() => {
         selectedOption.parentElement.classList.remove(applyClass);
         presentQuestions(); 
-    }, 500);           
+    }, 1000);           
 };
 
 
