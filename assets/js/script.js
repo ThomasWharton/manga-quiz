@@ -176,6 +176,7 @@ const submitScore = () => {
 
     result.classList.add('hidden');
     leaderboard.classList.remove('hidden');
+    exitLeaderboard.addEventListener('click', closeLeaderboard);
 };
 
 const openInstructions = () => {
