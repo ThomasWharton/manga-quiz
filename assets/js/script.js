@@ -16,11 +16,10 @@ const home = document.querySelector('#home');
 const resultMessage = document.querySelector('#result-message');
 const username = document.querySelector('#username');
 const submit = document.querySelector('#submit-score');
-const leaderboardUsers = Array.from(document.querySelectorAll('.leaderboard-user'));
-const leaderboardScores = Array.from(document.querySelectorAll('.leaderboard-score'));
 const exitLeaderboard = document.querySelector('#exit-leaderboard');
 const openInstructionsBtn = document.querySelector('#open-instructions-btn');
 const closeInstructionsBtn = document.querySelector('#close-instructions-btn');
+const highScoresList = document.querySelector('#high-scores-list');
 
 const APIURL = 'https://opentdb.com/api.php?amount=10&category=31&type=multiple';
 let scoreCounter = 0;
@@ -158,7 +157,10 @@ const submitScore = () => {
 
     sessionStorage.setItem('highScores', JSON.stringify(highScores));
 
-
+    highScoresList.innerHTML = highScores.map(score => {
+        return `<li class='high-score'>${score.user}: ${score.score}</li>`;
+    })
+    .join('');
 };
 
 const openInstructions = () => {
