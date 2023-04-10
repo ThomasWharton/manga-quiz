@@ -45,7 +45,7 @@ The background image was found on [freepik](https://www.freepik.com/ "freepik") 
 
 ### Colours
 
-Two colours which were preselected are the colours found in the Japanese flag. These are the colours of red and white. [Coolors](http://coolors.co "Coolors") was then used to lock in these 2 preselected colours and create a palette to be used for the quiz.
+Two colours which were preselected are the colours found in the Japanese flag. These are the colours of crimson and white. [Coolors](http://coolors.co "Coolors") was then used to lock in these 2 preselected colours and create a palette to be used for the quiz.
 
 The colours and their uses are listed below.
 
@@ -106,6 +106,8 @@ The welcome window will give a brief welcome message to the user and instruction
 The game window will show the question counter and their current score at the top. Underneath will be the current question, followed by the 4 possible answers. Once the answer has been selected, the next question will be loaded, the question counter and current score (if necessary) will be updated. There will be a restart button underneath the answers to allow the user to start the quiz again, if they so wish.
 
 ![Game Window](docs/screenshots/game-window.png)
+
+When the correct answer is selected, the background for the option container will change to green and red when the incorrect answer is selected.
 
 ### Result Window
 
