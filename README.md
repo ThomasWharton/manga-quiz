@@ -55,6 +55,8 @@ The colours and their uses are listed below.
 * #FFFFFF - This colour is used for text and background colour for containers.
 * #818F82 - This colour is used for box shadow on buttons when active.
 * #FF7F11 - This colour is used for box shadow on button hover, prefix background and input text.
+* #1AFF00 - This colour is used to highlight the option container when the correct answer is selected.
+* #FF1515 - This colour is used to highlight the option container when the incorrect answer is selected.
 
 ### Structure
 
