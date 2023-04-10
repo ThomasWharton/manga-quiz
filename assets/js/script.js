@@ -158,7 +158,10 @@ const submitScore = () => {
     sessionStorage.setItem('highScores', JSON.stringify(highScores));
 
     highScoresList.innerHTML = highScores.map(highScore => {
-        return `<li class='high-score'>${highScore.user} ${highScore.score}</li>`;
+        return `<li class='high-score'>
+                    <span>${highScore.user}</span>
+                    <span>${highScore.score}</span>
+                </li>`;
     })
     .join('');
 };

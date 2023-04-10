@@ -179,7 +179,8 @@ input:focus {
 /* Leaderboard window styling */
 
 #high-scores-list {
-    background-color: var(--orange);
+    margin: 1rem;
+    gap: 0.5rem;
 }
 
 .high-score {
@@ -188,4 +189,6 @@ input:focus {
     justify-content: space-between;
     background-color: var(--white);
     color: var(--crimson);
+    min-width: 20rem;
+    padding: 0.5rem;
 }
