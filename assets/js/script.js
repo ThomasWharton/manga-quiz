@@ -1,25 +1,25 @@
-const question = document.querySelector('#question');
+const questionRef = document.querySelector('#question');
 const options = Array.from(document.querySelectorAll('.option-text'));
-const quizStart = document.querySelector('#start-quiz');
-const leaderboardBtn = document.querySelector('#leaderboard-btn');
-const restart = document.querySelector('#restart');
-const welcome = document.querySelector('#welcome');
-const counters = document.querySelector('#counters');
-const quiz = document.querySelector('#quiz');
-const result = document.querySelector('#result');
-const instructions = document.querySelector('#instructions')
-const leaderboard = document.querySelector('#leaderboard');
-const currentScore = document.querySelector('#current-score');
-const questionNumber = document.querySelector('#question-number');
-const finalScore = document.querySelector('#final-score');
-const home = document.querySelector('#home');
-const resultMessage = document.querySelector('#result-message');
-const username = document.querySelector('#username');
-const submit = document.querySelector('#submit-score');
-const exitLeaderboard = document.querySelector('#exit-leaderboard');
-const openInstructionsBtn = document.querySelector('#open-instructions-btn');
-const closeInstructionsBtn = document.querySelector('#close-instructions-btn');
-const highScoresList = document.querySelector('#high-scores-list');
+const quizStartBtnRef = document.querySelector('#start-quiz-btn');
+const leaderboardBtnRef = document.querySelector('#leaderboard-btn');
+const restartBtnRef = document.querySelector('#restart-btn');
+const welcomeWindowRef = document.querySelector('#welcome');
+const countersRef = document.querySelector('#counters');
+const quizWindowRef = document.querySelector('#quiz');
+const resultWindowRef = document.querySelector('#result');
+const instructionsWindowRef = document.querySelector('#instructions')
+const leaderboardWindowRef = document.querySelector('#leaderboard');
+const currentScoreRef = document.querySelector('#current-score');
+const questionNumberRef = document.querySelector('#question-number');
+const finalScoreRef = document.querySelector('#final-score');
+const homeBtnRef = document.querySelector('#home-btn');
+const resultMessageRef = document.querySelector('#result-message');
+const usernameInputRef = document.querySelector('#username');
+const submitScoreBtnRef = document.querySelector('#submit-score-btn');
+const closeLeaderboardBtnRef = document.querySelector('#exit-leaderboard');
+const openInstructionsBtnRef = document.querySelector('#open-instructions-btn');
+const closeInstructionsBtnRef = document.querySelector('#close-instructions-btn');
+const highScoresListRef = document.querySelector('#high-scores-list');
 
 const APIURL = 'https://opentdb.com/api.php?amount=10&category=31&type=multiple';
 let scoreCounter = 0;
@@ -60,21 +60,21 @@ const shuffleAnswers = (answersArray) => answersArray.sort(() => Math.random() -
  */
 const presentQuestions = () => {
     if (availableQuestions.length === 0) {
-        finalScore.innerText = scoreCounter;
-        if (+finalScore.innerText < 5) {
-            resultMessage.innerText = 'Bad Luck =[';
+        finalScoreRef.innerText = scoreCounter;
+        if (+finalScoreRef.innerText < 5) {
+            resultMessageRef.innerText = 'Bad Luck =[';
         } else {
-            resultMessage.innerText = 'Well Done! =]';
+            resultMessageRef.innerText = 'Well Done! =]';
         }            
-        quiz.classList.add('hidden');
-        counters.classList.add('hidden');
-        result.classList.remove('hidden');
+        quizWindowRef.classList.add('hidden');
+        countersRef.classList.add('hidden');
+        resultWindowRef.classList.remove('hidden');
         return;
     };
     questionCounter++;
-    questionNumber.innerText = questionCounter;
+    questionNumberRef.innerText = questionCounter;
     presentedQuestion = availableQuestions[0];
-    question.innerHTML = presentedQuestion.question;
+    questionRef.innerHTML = presentedQuestion.question;
     options.forEach((option, index) => {
         option.innerHTML = presentedQuestion.answers[index];    
     });
@@ -82,7 +82,6 @@ const presentQuestions = () => {
 };
 
 /**
- * 
  * @param {event}
  * Checks selected answer and if correct adds point
  * and then calls for next question
@@ -93,7 +92,7 @@ const checkAnswer = (event) => {
 
     if (selectedAnswer == presentedQuestion.correctAnswer) {
         scoreCounter++;
-        currentScore.innerText = scoreCounter;  
+        currentScoreRef.innerText = scoreCounter;  
     } 
     const applyClass = selectedAnswer == presentedQuestion.correctAnswer ? 'correct' : 'incorrect';
     selectedOption.parentElement.classList.add(applyClass);
@@ -113,12 +112,12 @@ const checkAnswer = (event) => {
 const startQuiz = () => {
     questionCounter = 1;
     scoreCounter = 0;
-    questionNumber.innerText = questionCounter;
-    currentScore.innerText = scoreCounter;
-    resultMessage.innerText = "";
-    welcome.classList.add('hidden');
-    counters.classList.remove('hidden');
-    quiz.classList.remove('hidden');
+    questionNumberRef.innerText = questionCounter;
+    currentScoreRef.innerText = scoreCounter;
+    resultMessageRef.innerText = "";
+    welcomeWindowRef.classList.add('hidden');
+    countersRef.classList.remove('hidden');
+    quizWindowRef.classList.remove('hidden');
 };
 
 /**
@@ -129,9 +128,9 @@ const startQuiz = () => {
 const restartQuiz = () => {
     questionCounter = 1;
     scoreCounter = 0;    
-    quiz.classList.add('hidden');
-    counters.classList.add('hidden');
-    welcome.classList.remove('hidden');
+    quizWindowRef.classList.add('hidden');
+    countersRef.classList.add('hidden');
+    welcomeWindowRef.classList.remove('hidden');
     initialise();
 };
 
@@ -141,8 +140,8 @@ const restartQuiz = () => {
  * returns to welcome window
  */
 const goHome = () => {
-    result.classList.add('hidden');
-    welcome.classList.remove('hidden');
+    resultWindowRef.classList.add('hidden');
+    welcomeWindowRef.classList.remove('hidden');
     initialise();
 };
 
@@ -154,15 +153,18 @@ const goHome = () => {
  * 
  * Saves highScores array to sessionStorage
  * then adds high scores to list on the leaderboard html
+ * 
+ * Calls initialise function to fetch questions again
+ * and redirects to leaderboard 
  */
 const submitScore = () => {
-    if (!username.value){
+    if (!usernameInputRef.value){
         alert('Please enter a username');
         return
     }
     const submittedScore = {
-        score: +finalScore.innerText,
-        user: username.value
+        score: +finalScoreRef.innerText,
+        user: usernameInputRef.value
     };    
     highScores.push(submittedScore);
     highScores.sort((a, b) => b.score - a.score);
@@ -170,7 +172,7 @@ const submitScore = () => {
 
     sessionStorage.setItem('highScores', JSON.stringify(highScores));
 
-    highScoresList.innerHTML = highScores.map(highScore => {
+    highScoresListRef.innerHTML = highScores.map(highScore => {
         return `<li class='high-score'>
                     <span>${highScore.user}</span>
                     <span>${highScore.score}</span>
@@ -179,33 +181,33 @@ const submitScore = () => {
     .join('');
     initialise();
 
-    result.classList.add('hidden');
-    leaderboard.classList.remove('hidden');
-    exitLeaderboard.addEventListener('click', closeLeaderboard);
+    resultWindowRef.classList.add('hidden');
+    leaderboardWindowRef.classList.remove('hidden');
+    closeLeaderboardBtnRef.addEventListener('click', closeLeaderboard);
 };
 
 const openInstructions = () => {
-    welcome.classList.add('hidden');
-    instructions.classList.remove('hidden');
+    welcomeWindowRef.classList.add('hidden');
+    instructionsWindowRef.classList.remove('hidden');
 
-    closeInstructionsBtn.addEventListener('click', closeInstructions);
+    closeInstructionsBtnRef.addEventListener('click', closeInstructions);
 }
 
 const closeInstructions = () => {
-    instructions.classList.add('hidden');
-    welcome.classList.remove('hidden');
+    instructionsWindowRef.classList.add('hidden');
+    welcomeWindowRef.classList.remove('hidden');
 }
 
 const openLeaderboard = () => {
-    welcome.classList.add('hidden');
-    leaderboard.classList.remove('hidden');
+    welcomeWindowRef.classList.add('hidden');
+    leaderboardWindowRef.classList.remove('hidden');
 
-    exitLeaderboard.addEventListener('click', closeLeaderboard);  
+    closeLeaderboardBtnRef.addEventListener('click', closeLeaderboard);  
 };
 
 const closeLeaderboard = () => {    
-    leaderboard.classList.add('hidden');
-    welcome.classList.remove('hidden');
+    leaderboardWindowRef.classList.add('hidden');
+    welcomeWindowRef.classList.remove('hidden');
 }
  
 /**
@@ -230,20 +232,18 @@ const initialise = async() => {
  */
 window.addEventListener("DOMContentLoaded", (event) => {
 
-    quizStart.addEventListener('click', startQuiz);
-    openInstructionsBtn.addEventListener('click', openInstructions);
-    leaderboardBtn.addEventListener('click', openLeaderboard);
-    restart.addEventListener('click', restartQuiz);
-    home.addEventListener('click', goHome);
-    leaderboard
+    quizStartBtnRef.addEventListener('click', startQuiz);
+    openInstructionsBtnRef.addEventListener('click', openInstructions);
+    leaderboardBtnRef.addEventListener('click', openLeaderboard);
+    restartBtnRef.addEventListener('click', restartQuiz);
+    homeBtnRef.addEventListener('click', goHome);
     
     initialise();
 
-    // Add click event listener for answer options
     options.forEach(option => {
         option.addEventListener('click', checkAnswer);
     });
     
-    submit.addEventListener('click', submitScore);
+    submitScoreBtnRef.addEventListener('click', submitScore);
 
 });
