@@ -26,7 +26,7 @@ const APIURL = 'https://opentdb.com/api.php?amount=10&category=31&type=multiple'
 let scoreCounter = 0;
 let questionCounter = 0;
 let availableQuestions = [];
-let highScores = [];
+let highScores = JSON.parse(sessionStorage.getItem('highScores')) || [];
 
 /**
  * Removes unneccessary data
@@ -149,12 +149,16 @@ const goHome = () => {
 
 const submitScore = () => {
     const submittedScore = {
-        score: finalScore.innerText,
+        score: +finalScore.innerText,
         user: username.value
     };    
     highScores.push(submittedScore);
     highScores.sort((a, b) => b.score - a.score);
     highScores.splice(5);
+
+    sessionStorage.setItem('highScores', JSON.stringify(highScores));
+
+
 };
 
 const openInstructions = () => {
@@ -170,12 +174,6 @@ const closeInstructions = () => {
 }
 
 const openLeaderboard = () => {
-    leaderboardUsers.forEach((leaderboardUser) => {
-        leaderboardUser.innerHTML = highScores.user;    
-    });
-    leaderboardScores.forEach((leaderboardScore) => {
-        leaderboardScore.innerHTML = highScores.score;
-    });
     welcome.classList.add('hidden');
     leaderboard.classList.remove('hidden');
 
