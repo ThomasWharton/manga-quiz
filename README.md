@@ -117,7 +117,9 @@ The result window will show a congratulation, or commiseration message depending
 
 ### Leaderboard Window
 
-The leaderboard window can be accessed via a button on the welcome window. This will show the best 5 scores for the quiz. It will feature the username, score and position on the leaderboard for the user.
+The leaderboard window can be accessed via a button on the welcome window. It will also be opened upon submitting a score. This will show the best 5 scores for the quiz. It will feature the username and their score on the leaderboard.
+
+![Leaderboard Window](docs/screenshots/leaderboard-window.png)
 
 ## Testing
 
