@@ -1,7 +1,7 @@
 const questionRef = document.querySelector('#question');
 const options = Array.from(document.querySelectorAll('.option-text'));
 const quizStartBtnRef = document.querySelector('#start-quiz-btn');
-const leaderboardBtnRef = document.querySelector('#leaderboard-btn');
+const openLeaderboardBtnRef = document.querySelector('#open-leaderboard-btn');
 const restartBtnRef = document.querySelector('#restart-btn');
 const welcomeWindowRef = document.querySelector('#welcome');
 const countersRef = document.querySelector('#counters');
@@ -250,7 +250,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
     quizStartBtnRef.addEventListener('click', startQuiz);
     openInstructionsBtnRef.addEventListener('click', openInstructions);
-    leaderboardBtnRef.addEventListener('click', openLeaderboard);
+    openLeaderboardBtnRef.addEventListener('click', openLeaderboard);
     restartBtnRef.addEventListener('click', restartQuiz);
     homeBtnRef.addEventListener('click', goHome);
     
