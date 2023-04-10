@@ -178,18 +178,14 @@ input:focus {
 
 /* Leaderboard window styling */
 
-.leaderboard-container {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 0.5rem;
-    width: 100%;
-    background-color: var(--white);
-    color: var(--crimson);
-    text-align: center;
+#high-scores-list {
+    background-color: var(--orange);
 }
 
-.leaderboard-prefix {
-    padding: 1rem;
-    background-color: var(--orange);
-    color: var(--white);
+.high-score {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: var(--white);
+    color: var(--crimson);
 }
