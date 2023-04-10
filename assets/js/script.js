@@ -186,6 +186,10 @@ const submitScore = () => {
     closeLeaderboardBtnRef.addEventListener('click', closeLeaderboard);
 };
 
+/**
+ * Adds hidden class to welcome window
+ * and removes from instructions window
+ */
 const openInstructions = () => {
     welcomeWindowRef.classList.add('hidden');
     instructionsWindowRef.classList.remove('hidden');
@@ -193,11 +197,19 @@ const openInstructions = () => {
     closeInstructionsBtnRef.addEventListener('click', closeInstructions);
 }
 
+/**
+ * Adds hidden class to instruction window
+ * and removes from welcome window 
+ */
 const closeInstructions = () => {
     instructionsWindowRef.classList.add('hidden');
     welcomeWindowRef.classList.remove('hidden');
 }
 
+/**
+ * Adds hidden class to welcome window
+ * and removes from leaderboard window 
+ */
 const openLeaderboard = () => {
     welcomeWindowRef.classList.add('hidden');
     leaderboardWindowRef.classList.remove('hidden');
@@ -205,6 +217,10 @@ const openLeaderboard = () => {
     closeLeaderboardBtnRef.addEventListener('click', closeLeaderboard);  
 };
 
+/**
+ * Adds hidden class to leaderboard window
+ * and removes from welcome window 
+ */
 const closeLeaderboard = () => {    
     leaderboardWindowRef.classList.add('hidden');
     welcomeWindowRef.classList.remove('hidden');
