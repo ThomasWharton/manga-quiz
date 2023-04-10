@@ -88,6 +88,12 @@ Wireframes have been created using [Balsamic](https://balsamiq.com "Balsamic"). 
 
 ## Features
 
+### Favicon
+
+The favicon was created using the website [favicon.io](https://favicon.io/ "favicon.io"). It uses the same font as the logo and follows the same colour theme as the site. It gives a more polished feel to the website.
+
+![favicon](docs/screenshots/mq-favicon.png)
+
 ### Logo
 
 The logo will is styled using the [Bangers](https://fonts.google.com/specimen/Bangers "Bangers") font and acts to immediately engage the user.
@@ -115,11 +121,19 @@ The result window will show a congratulation, or commiseration message depending
 
 ![Result Window](docs/screenshots/result-window.png)
 
+Should the user try to submit a score without first inputting a username into the input field, an alert message will be presented telling them to enter a username.
+
 ### Leaderboard Window
 
 The leaderboard window can be accessed via a button on the welcome window. It will also be opened upon submitting a score. This will show the best 5 scores for the quiz. It will feature the username and their score on the leaderboard.
 
 ![Leaderboard Window](docs/screenshots/leaderboard-window.png)
+
+### 404 Page
+
+The 404 page will alert the user if they have navigated to a broken link. It will redirect them back to the main page in 10 seconds but also has a link to do so if the redirect fails.
+
+![404 Page](docs/screenshots/404-page.png)
 
 ## Testing
 
@@ -134,6 +148,7 @@ The leaderboard window can be accessed via a button on the welcome window. It wi
 ### Libraries & Framework
 
 * [Google Fonts](https://fonts.google.com "Google Fonts")
+* [freepik](https://www.freepik.com/ "freepik")
 
 ### Tools
 
@@ -141,6 +156,7 @@ The leaderboard window can be accessed via a button on the welcome window. It wi
 * [Gitpod](https://gitpod.io "Gitpod")
 * [Balsamic](https://balsamiq.com "Balsamic")
 * [Coolors](http://coolors.co "Coolors")
+* [favicon.io](https://favicon.io/ "favicon.io")
 * [DevTools](https://developer.chrome.com/docs/devtools "DevTools")
 * [W3C Markup Validation](https://validator.w3.org/#validate_by_input "W3C Markup Validation")
 * [W3C CSS Validation](https://jigsaw.w3.org/css-validator/#validate_by_input "W3C CSS Validation")
