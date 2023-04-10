@@ -191,6 +191,8 @@ input:focus {
     color: var(--crimson);
     min-width: 20rem;
     padding: 0.5rem;
+    border: 0.4rem solid var(--orange);
+    border-radius: 1rem;
 }
 
 /* 404 Page Styling */
