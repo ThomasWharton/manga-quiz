@@ -173,6 +173,9 @@ const submitScore = () => {
                 </li>`;
     })
     .join('');
+
+    result.classList.add('hidden');
+    leaderboard.classList.remove('hidden');
 };
 
 const openInstructions = () => {
