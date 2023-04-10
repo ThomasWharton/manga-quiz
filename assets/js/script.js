@@ -146,6 +146,15 @@ const goHome = () => {
     initialise();
 };
 
+/**
+ * Creates list item
+ * @param {} submittedScore
+ * @param {[]} highScores Adds submittedScore to array,
+ * sorts and splices any item with index value >= 5
+ * 
+ * Saves highScores array to sessionStorage
+ * then adds high scores to list on the leaderboard html
+ */
 const submitScore = () => {
     const submittedScore = {
         score: +finalScore.innerText,
