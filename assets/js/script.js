@@ -111,9 +111,9 @@ const checkAnswer = (event) => {
  * and gets next question.
  */
 const startQuiz = () => {
-    questionCounter = 0;
+    questionCounter = 1;
     scoreCounter = 0;
-    questionNumber.innerText = '1';
+    questionNumber.innerText = questionCounter;
     currentScore.innerText = scoreCounter;
     resultMessage.innerText = "";
     welcome.classList.add('hidden');
@@ -127,7 +127,7 @@ const startQuiz = () => {
  * thus returning to welcome window.
  */
 const restartQuiz = () => {
-    questionCounter = 0;
+    questionCounter = 1;
     scoreCounter = 0;    
     quiz.classList.add('hidden');
     counters.classList.add('hidden');
@@ -156,6 +156,10 @@ const goHome = () => {
  * then adds high scores to list on the leaderboard html
  */
 const submitScore = () => {
+    if (!username.value){
+        alert('Please enter a username');
+        return
+    }
     const submittedScore = {
         score: +finalScore.innerText,
         user: username.value
@@ -173,6 +177,7 @@ const submitScore = () => {
                 </li>`;
     })
     .join('');
+    initialise();
 
     result.classList.add('hidden');
     leaderboard.classList.remove('hidden');
@@ -239,7 +244,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
         option.addEventListener('click', checkAnswer);
     });
     
-    //Add click event listener for submit score button
     submit.addEventListener('click', submitScore);
 
 });
