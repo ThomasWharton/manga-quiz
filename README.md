@@ -248,14 +248,14 @@ The JavaScript code has been validated using [JSHint](https://jshint.com/ "JSHin
 *JSHint result*<br>
 ![JSHint result](docs/screenshots/jshint-result.png)
 
+The variables in question are found in the presentQuestion function. Due to time restrictions and the fact that the code is functioning correctly, it has been decided not to investigate further. If more time was available, some research into fixing this issue would be done.
+
 ### Wave Testing
 
 Testing has been completed using WAVE Web Accessibility Evaluation Tool to ensure the site is fully accessible to those with impairments. The test completed without errors.
 
 *Wave testing result*<br>
 ![Wave testing result](docs/screenshots/wave-testing-result.png)
-
-The variables in question are found in the presentQuestion function. Due to time restrictions and the fact that the code is functioning correctly, it has been decided not to investigate further. If more time was available, some research into fixing this issue would be done.
 
 ### Lighthouse Testing
 
