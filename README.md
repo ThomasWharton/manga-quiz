@@ -176,6 +176,8 @@ The site was deployed using GitHub. The steps for deployment are as follows:
 
 ## Credits
 
+The javascript code for saving of high scores and displaying them on the leaderboard was created by following this [tutorial](https://www.youtube.com/watch?v=DFhmNLKwwGw&ab_channel=JamesQQuick "tutorial") by [James Q Quick](https://www.youtube.com/@JamesQQuick "James Q Quick").
+
 The shuffle array function used to shuffle the answers was found in a post on [dev.to](https://dev.to/codebubb/how-to-shuffle-an-array-in-javascript-2ikj "dev.to").
 
 The background image as mentioned before was found on [freepik](https://www.freepik.com/ "freepik").

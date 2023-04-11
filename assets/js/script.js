@@ -156,6 +156,9 @@ const goHome = () => {
  * 
  * Calls initialise function to fetch questions again
  * and redirects to leaderboard 
+ * 
+ * This function was created by following along with a tutorial
+ * on youtube by James Q Quick
  */
 const submitScore = () => {
     if (!usernameInputRef.value){
