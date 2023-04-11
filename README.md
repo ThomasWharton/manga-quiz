@@ -137,6 +137,8 @@ The 404 page will alert the user if they have navigated to a broken link. It wil
 
 ## Testing
 
+### Feature Testing
+
 ### Validator Testing
 
 The HTML and CSS code have been validated using [W3C Markup Validation](https://validator.w3.org/#validate_by_input "W3C Markup Validation") and [W3C CSS Validation](https://jigsaw.w3.org/css-validator/#validate_by_input "W3C CSS Validation"). All code has validated successfully without errors.
@@ -150,12 +152,19 @@ The HTML and CSS code have been validated using [W3C Markup Validation](https://
 *CSS validator result*<br>
 ![CSS validator result](docs/screenshots/css-validator-result.png)
 
+The JavaScript code has been validated using [JSHint](https://jshint.com/ "JSHint") and produced the following results.
+
+*JSHint result*<br>
+![JSHint result](docs/screenshots/jshint-result.png)
+
 ### Wave Testing
 
 Testing has been completed using WAVE Web Accessibility Evaluation Tool to ensure the site is fully accessible to those with impairments. The test completed without errors.
 
 *Wave testing result*<br>
 ![Wave testing result](docs/screenshots/wave-testing-result.png)
+
+The variables in question are found in the presentQuestion function. Due to time restrictions and the fact that the code is functioning correctly, it has been decided not to investigate further. If more time was available, some research into fixing this issue would be done.
 
 ### Lighthouse Testing
 
