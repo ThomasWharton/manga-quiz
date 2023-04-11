@@ -123,16 +123,29 @@
 
             <!-- Results Window -->
             <div id="result" class="window flex-column flex-center hidden">
-                <h2><span id="result-message">Well done =]</span><br> You scored <span id="final-score">0</span> out of 10.</h2>
-                <p>Submit your score to the leader board by entering your username below!</p>
+
+                <h2>
+                    <span id="result-message">
+                        Well done =]
+                    </span><br>
+                     You scored 
+                     <span id="final-score">
+                        0
+                    </span>
+                     out of 10.
+                </h2>
+
+                <p>
+                    Submit your score to the leader board by entering your username below!
+                </p>
+
                 <input
                     type="text"
                     aria-label="Username input field" 
                     name="username"
                     id="username"
-                    placeholder="Username"
-                    required
-                />
+                    placeholder="Username"/>
+
                 <button 
                     type="button"
                     aria-label="Submit score button"  
@@ -140,15 +153,18 @@
                     id="submit-score-btn">
                     Submit
                 </button>
+
                 <button 
                     type="button"
                     aria-label="Go back to home button"  
                     class="btn uppercase" 
                     id="home-btn">
                     Home
-                </button>            
+                </button>         
             </div>
+
             <div id="leaderboard" class="window flex-column flex-center hidden">
+
                 <h2 class="uppercase">Leaderboard</h2>
 
                 <ol id="high-scores-list" class="flex-column"></ol>

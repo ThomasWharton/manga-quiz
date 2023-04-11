@@ -137,6 +137,34 @@ The 404 page will alert the user if they have navigated to a broken link. It wil
 
 ## Testing
 
+### Validator Testing
+
+The HTML and CSS code have been validated using [W3C Markup Validation](https://validator.w3.org/#validate_by_input "W3C Markup Validation") and [W3C CSS Validation](https://jigsaw.w3.org/css-validator/#validate_by_input "W3C CSS Validation"). All code has validated successfully without errors.
+
+*index.html validator result*<br>
+![index.html validtor result](docs/screenshots/index-html-validator-result.png)
+
+*404.html validator result*<br>
+![404.html validtor result](docs/screenshots/404-html-validator-result.png)
+
+*CSS validator result*<br>
+![CSS validtor result](docs/screenshots/css-validator-result.png)
+
+### Wave Testing
+
+### Lighthouse Testing
+
+The lighthouse function within devtools has been used to test the site for mobile and desktop. The site achieved max scores across the board for desktop testing and an almost max score for mobile testing.
+
+*Desktop Scores*<br>
+![Desktop Lighthouse scores](docs/screenshots/lighthouse-desktop-scores.png)
+
+*Mobile Scores*<br>
+![Mobile Lighthouse scores](docs/screenshots/lighthouse-mobile-scores.png)
+
+The mobile scores drop a point in performance due to the loading time for the background image. The recommended fix is to convert the background image to a different file type to reduce the file size and thus, speed up the loading time of the page. However due to time constraints and this being a minimal performance improvement, it has been decided that the file type will remain the same.
+
+
 ## Technologies Used
 
 ### Languages
