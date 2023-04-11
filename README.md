@@ -103,9 +103,15 @@ The logo will is styled using the [Bangers](https://fonts.google.com/specimen/Ba
 
 ### Welcome Window
 
-The welcome window will give a brief welcome message to the user and instructions on how to progress through the quiz. There is also a button to start the quiz and one to access the leaderboard.
+The welcome window will contain a welcome message for the user as well as three buttons. The three buttons are for starting the quiz, accessing the instructions and opening the leaderboard.
 
 ![Welcome Window](docs/screenshots/welcome-window.png)
+
+### Instructions Window
+
+The instruction window gives the user some brief information on how to navigate through the quiz.
+
+![Instruction Window](docs/screenshots/instructions-window.png)
 
 ### Game Window
 
@@ -121,7 +127,7 @@ The result window will show a congratulation, or commiseration message depending
 
 ![Result Window](docs/screenshots/result-window.png)
 
-Should the user try to submit a score without first inputting a username into the input field, an alert message will be presented telling them to enter a username.
+Should the user try to submit a score without first inputting a username, an alert message will be presented telling them to enter a username.
 
 ### Leaderboard Window
 
@@ -138,6 +144,91 @@ The 404 page will alert the user if they have navigated to a broken link. It wil
 ## Testing
 
 ### Feature Testing
+
+#### Start Quiz Button
+* Feature Description - Interactive button for starting the quiz.
+* Expected Outcome - Upon click, user should be taken to quiz window, first question and counters should be presented.
+* Testing - Start button was clicked
+* Result - As expected
+
+#### Open Instructions Button
+* Feature Description - Interactive button for opening instructions.
+* Expected Outcome - Upon click, instructions window should be presented.
+* Testing - Open instructions button was clicked.
+* Result - As expected.
+
+#### Close Instructions Button
+* Feature Description - Ineractive button for closing instructions.
+* Expected Outcome - Upon click, instructions window should close and user taken back to welcome window.
+* Testing - Open instructions window and then click close instructions button.
+* Result - As expected.
+
+#### Open Leaderboard Button
+* Feature Description - Interactive button for opening leaderboard.
+* Expected Outcome - Upon click, leaderboard window should be presented. Initially should be not show any scores until first score submitted.
+* Testing - Open leaderboard button was clicked, no highscores shown on initial opening.
+* Result - As expected.
+
+#### Close Leaderboard Button
+* Feature Description - Interactive button for closing leaderboard.
+* Expected Outcome - Upon click, leaderboard window should close and user taken back to welcome window.
+* Testing - Leaderboard window opened and then click close leaderboard button.
+* Result - As expected.
+
+#### Restart Quiz Button
+* Feature Description - Interactive button for restarting quiz.
+* Expected Outcome - Upon click, the user should be navigated back to welcome window, counters should be reset back to default values and questions refetched.
+* Testing - Start quiz and answer a few questions, restart button clicked, use console log to check available questions and counter values.
+* Result - As expected.
+
+#### Question Counter
+* Feature Description - Counter for questions to notify user which question they are on.
+* Expected Outcome - Should start at 1 and increase by 1 after user has answered question.
+* Testing - Start quiz and answer a few questions.
+* Result - As expected.
+
+#### Score Counter
+* Feature Description - Counter for score to notify user of their current score.
+* Expected Outcome - Should start at 0 and increase by 1 for every correct answer given.
+* Testing - Start quiz and observe whether counter increases on correct answer and does not increase on incorrect answer.
+* Result - As expected.
+
+#### Answer Feedback
+* Feature Description - Feedback to notify user if the selected answer was correct or incorrent.
+* Expected Outcome - Upon answer being selected, if answer is correct, the option container should turn green, if incorrect it should turn red.
+* Testing - Start quiz, selected correct answer and then select incorrect answer.
+* Result - As expectdd.
+
+#### Next Question Load
+* Feature Description - Upon answering a question, the next question will be loaded.
+* Expected Outcome - Upon answer of question and initial load, next question should be presented. The previously presented question should be removed from available questions.
+* Testing - Start quiz and answer question. Console log available questions to see if previously presented question was removed from available questions.
+* Result - As expected.
+
+#### Result Window Load
+* Feature Description - Upon answering 10 questions, the quiz will end and result window presented with final score.
+* Expected Outcome - When all 10 questions have been answered, the quiz should end and results window should be presented with final score.
+* Testing - Started and completed quiz.
+* Result - As expected.
+
+#### Result Message
+* Feature Description - Result message dependent on user score.
+* Expected Outcome - If the user scored less than 5, the result message should read **Bad Luck =[**. If score is 5 or higher, result message should read **Well Done! =]**.
+* Testing - Complete quiz with a score of less than 5 and then with a score of 5 or higher.
+* Result - As expected.
+
+#### Submit Score
+* Feature Description - Allows user to submit score upon entering a username and navigates them to leaderboard upon successful submission.
+* Expected Outcome - If user submits highscore, score should be added to session storage and presented on leaderboard. No more than 5 highscores will be saved. Upon submission, if there is 5 scores already in high scores array, lowest score should be removed. Scores should be sorted from highest to lowest. Submitting score will not work if user has not given a username and alert message presented.
+* Testing - Complete quiz more than 5 times with varying results. Attempted to submit score without username.
+* Result - As expected.
+
+#### Home Button
+* Feature Description - Allows user to navigate back to welcome window from result window without submitting their score.
+* Expected Outcome - User should be navigated back to welcome window from result window. Available questions should be refetched.
+* Testing - Home button on result window clicked. Console log to check available questions have been refetched.
+* Result - As expected. 
+
 
 ### Validator Testing
 

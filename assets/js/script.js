@@ -126,7 +126,7 @@ const startQuiz = () => {
  * thus returning to welcome window.
  */
 const restartQuiz = () => {
-    questionCounter = 1;
+    questionCounter = 0;
     scoreCounter = 0;    
     quizWindowRef.classList.add('hidden');
     countersRef.classList.add('hidden');
