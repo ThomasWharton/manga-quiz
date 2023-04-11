@@ -7,7 +7,7 @@ const welcomeWindowRef = document.querySelector('#welcome');
 const countersRef = document.querySelector('#counters');
 const quizWindowRef = document.querySelector('#quiz');
 const resultWindowRef = document.querySelector('#result');
-const instructionsWindowRef = document.querySelector('#instructions')
+const instructionsWindowRef = document.querySelector('#instructions');
 const leaderboardWindowRef = document.querySelector('#leaderboard');
 const currentScoreRef = document.querySelector('#current-score');
 const questionNumberRef = document.querySelector('#question-number');
@@ -70,7 +70,7 @@ const presentQuestions = () => {
         countersRef.classList.add('hidden');
         resultWindowRef.classList.remove('hidden');
         return;
-    };
+    }
     questionCounter++;
     questionNumberRef.innerText = questionCounter;
     presentedQuestion = availableQuestions[0];
@@ -163,7 +163,7 @@ const goHome = () => {
 const submitScore = () => {
     if (!usernameInputRef.value){
         alert('Please enter a username');
-        return
+        return;
     }
     const submittedScore = {
         score: +finalScoreRef.innerText,
@@ -198,7 +198,7 @@ const openInstructions = () => {
     instructionsWindowRef.classList.remove('hidden');
 
     closeInstructionsBtnRef.addEventListener('click', closeInstructions);
-}
+};
 
 /**
  * Adds hidden class to instruction window
@@ -207,7 +207,7 @@ const openInstructions = () => {
 const closeInstructions = () => {
     instructionsWindowRef.classList.add('hidden');
     welcomeWindowRef.classList.remove('hidden');
-}
+};
 
 /**
  * Adds hidden class to welcome window
@@ -227,7 +227,7 @@ const openLeaderboard = () => {
 const closeLeaderboard = () => {    
     leaderboardWindowRef.classList.add('hidden');
     welcomeWindowRef.classList.remove('hidden');
-}
+};
  
 /**
  * Waits for questions to be fetched from API

@@ -142,15 +142,20 @@ The 404 page will alert the user if they have navigated to a broken link. It wil
 The HTML and CSS code have been validated using [W3C Markup Validation](https://validator.w3.org/#validate_by_input "W3C Markup Validation") and [W3C CSS Validation](https://jigsaw.w3.org/css-validator/#validate_by_input "W3C CSS Validation"). All code has validated successfully without errors.
 
 *index.html validator result*<br>
-![index.html validtor result](docs/screenshots/index-html-validator-result.png)
+![index.html validator result](docs/screenshots/index-html-validator-result.png)
 
 *404.html validator result*<br>
-![404.html validtor result](docs/screenshots/404-html-validator-result.png)
+![404.html validator result](docs/screenshots/404-html-validator-result.png)
 
 *CSS validator result*<br>
-![CSS validtor result](docs/screenshots/css-validator-result.png)
+![CSS validator result](docs/screenshots/css-validator-result.png)
 
 ### Wave Testing
+
+Testing has been completed using WAVE Web Accessibility Evaluation Tool to ensure the site is fully accessible to those with impairments. The test completed without errors.
+
+*Wave testing result*<br>
+![Wave testing result](docs/screenshots/wave-testing-result.png)
 
 ### Lighthouse Testing
 
