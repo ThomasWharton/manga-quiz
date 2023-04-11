@@ -176,6 +176,10 @@ The site was deployed using GitHub. The steps for deployment are as follows:
 
 ## Credits
 
+The shuffle array function used to shuffle the answers was found in a post on [dev.to](https://dev.to/codebubb/how-to-shuffle-an-array-in-javascript-2ikj "dev.to").
+
+The background image as mentioned before was found on [freepik](https://www.freepik.com/ "freepik").
+
 I would like to thank my mentor [Simen Daehlin](https://github.com/Eventyret "Simen Daehlin") for all his advice. For pushing me to learn new things and think outside the box.
 
 I would also like to thank my friend [Marco](https://github.com/marconett "Marco") for all the help he gave me in troubleshooting issues with my project and his patience in helping me understand what I was doing.
